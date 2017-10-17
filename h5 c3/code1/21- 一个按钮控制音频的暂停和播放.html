@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>audio</title>
+  <style>
+    span {
+      width: 43px;
+      height: 44px;
+      display: block;
+      background: url(images/sprite.png) no-repeat;
+    }
+  </style>
+</head>
+<body>
+<span></span>
+<!--<audio src="audio/yinyue.mp3" ></audio>-->
+<audio autoplay>
+  <source src="audio/yinyue.mp3">
+  <source src="audio/yinyue.ogg">
+</audio>
+</body>
+</html>
+<script>
+  //1.获得要操作的对象
+  var span = document.querySelector("span");
+  var audio = document.querySelector("audio");
+  // 2.给事件源注册事件
+  span.onclick = function (){
+    if(audio.paused) {  // 当前的audio标签处于暂停状态的时候，就需要播放了
+      audio.play();// 调用play方法进行播放
+      this.style.backgroundPosition = "bottom";
+    }else {
+      audio.pause();// 暂停
+      this.style.backgroundPosition = 'top';
+    }
+  }
+  
+  // audio.paused
+  // play
+</script>

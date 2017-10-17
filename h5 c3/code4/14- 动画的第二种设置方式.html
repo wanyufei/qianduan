@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>动画第二种设置方式</title>
+  <style>
+    *{
+        margin:0;
+        padding:0;
+    }
+    div {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      position: absolute;
+      animation: play 2s linear infinite 2s alternate;
+    }
+    @keyframes play {
+      0%{
+        left:0;
+        top:0;
+      }
+      25% {
+        left: 1000px;
+        top:0;
+      }
+      50%{
+        left: 1000px;
+        top:600px;
+      }
+      75% {
+        left: 0;
+        top: 600px;
+      }
+      100% {
+        left:0;
+        top:0;
+      }
+    }
+  </style>
+</head>
+<body>
+<div></div>
+</body>
+</html>

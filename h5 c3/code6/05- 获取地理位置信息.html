@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>获取地理位置信息</title>
+  
+</head>
+<body>
+<div></div>
+</body>
+</html>
+<script>
+  // nav
+  // 第一个参数是方法或是函数  当获取位置成功的时候，要执行的代码
+  // 第二个参数也是方法或是函数，是获取位置失败的时候要执行的代码
+  var box = document.querySelector("div");
+  navigator.geolocation.getCurrentPosition(function (position){
+//         console.log(position);
+    var latitude = position.coords.latitude;  // 纬度 22.58731
+    var longitude = position.coords.longitude; // 经度  113.90441
+    var accuracy = position.coords.accuracy;  // 1870
+    var altitude = position.coords.altitude;
+    box.innerHTML = '经度：'+longitude +'<br/>'+'纬度：'+latitude +"<br/>"+"精度："+accuracy+"<br/>"+"海拔："+altitude;
+  }, function (error){
+    box.innerHTML = '报错了';
+  })
+  
+  
+  /*
+   * / position.coords.latitude 纬度
+   // position.coords.longitude 经度
+   // position.coords.accuracy 精度
+   // position.coords.altitude 海拔高度
+   *
+   * */
+  //    var obj = {
+  //      name :"张三",
+  //      ls:{
+  //        name:'李四',
+  //        age: 20
+  //      }
+  //    }
+  //    console.log(obj.ls.age);
+</script>

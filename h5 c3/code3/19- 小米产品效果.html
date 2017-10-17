@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>小米产品</title>
+  <style>
+    body {
+      background-color: #ccc;
+    }
+    .box {
+      width: 220px;
+      height: 300px;
+      background-color: #fff;
+      float: left;
+      margin: 20px 30px;
+      position: relative;
+      transition:all 0.3s;
+      overflow:hidden;
+    }
+    .des {
+      width: 100%;
+      height: 70px;
+      background-color: orangered;
+      position: absolute;
+      bottom: -70px;
+      transition:all 0.3s;
+    }
+    .box:hover .des{
+      bottom: 0px;
+    }
+    .box:hover {
+      transform: translateY(-3px);
+      box-shadow: 5px 5px 30px 2px #000;
+    }
+  </style>
+</head>
+<body>
+<div class="box">
+  <img src="images/xiaom1.jpg" alt="">
+  <div class="des"></div>
+</div>
+<div class="box">
+  <img src="images/xiaom1.jpg" alt="">
+  <div class="des"></div>
+</div>
+<div class="box">
+  <img src="images/xiaom1.jpg" alt="">
+  <div class="des"></div>
+</div>
+<div class="box">
+  <img src="images/xiaom1.jpg" alt="">
+  <div class="des"></div>
+</div>
+</body>
+</html>

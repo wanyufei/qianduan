@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>调色版</title>
+  <style>
+    body {
+      background-color: #f7f7f7;
+      /*background: rgb(,,);*/
+    }
+  </style>
+  <script>
+    window.onload = function(){
+        var  rval=0;
+        var  gval=0;
+        var  bval=0;
+        function $(id){
+          return document.querySelector("#"+id);
+        }
+        function change(id){
+          // input  只要数字有改变，就会触发
+          // change  以最后的结果改变为准，中间如何改变，如果没有确定的话，是不会触发事件
+          $(id).oninput = function (){
+              switch(id){
+                case "r":
+                  rval = $(id).value;
+                  break;
+                case "g":
+                  gval = $(id).value;
+                  break;
+                case 'b':
+                  bval = document.querySelector("#b").value;
+                  break;
+              }
+            document.body.style.backgroundColor = 'rgb('+rval+','+gval+','+bval+')';
+          }
+        }
+      change('r');
+      change('g');
+      change('b');
+    }
+    
+  </script>
+</head>
+<body>
+红色： <input type="range" max="255" min="0" value="0" id="r"><Br/>
+绿色： <input type="range" max="255" min="0" value="0" id="g"><br/>
+蓝色： <input type="range" max="255" min="0" value="0" id="b">
+</body>
+</html>

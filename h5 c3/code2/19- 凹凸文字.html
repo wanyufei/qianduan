@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>凹凸文字</title>
+  <style>
+    body {
+      background-color: gray;
+    }
+    p {
+      font: bold 8em "microsoft yahei";
+      color: gray;
+    }
+    p:first-child {
+      text-shadow: -1px -1px white,1px 1px #000;
+    }
+    p:last-child {
+      text-shadow: -1px -1px #000,1px 1px white;
+    }
+  </style>
+</head>
+<body>
+  <p>这是一个凸起的文字</p>
+  <p>这是一个凹下的文字</p>
+</body>
+</html>

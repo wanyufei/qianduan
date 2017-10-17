@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>自定义视频</title>
+  <link rel="stylesheet" href="css/font-awesome.css">
+  <link rel="stylesheet" href="css/movie.css">
+</head>
+<body>
+<div class="movie">
+  <div class="movie-wrapper">
+    <video src="movies/movie.mp4" autoplay ></video>
+    <div class="controls">
+      <i class="play fa fa-pause"></i>
+      <i class="full fa fa-arrows-alt"></i>
+      <input type="range" class="range1" value="0">
+      <i class="sound fa fa-volume-up" >
+        <input type="range" class="range2" value="100">
+      </i>
+    </div>
+  </div>
+  <div class="movie-list">
+    <ul>
+      <li data-src="movies/movie.mp4">海鸟捕鱼</li>
+      <li data-src="movies/02.mp4">别惹我</li>
+      <li data-src="movies/03.mp4">这货是只鳄鱼</li>
+      <li data-src="movies/04.mp4">两只猫咪的爱情</li>
+    </ul>
+  </div>
+</div>
+</body>
+</html>
+<script>
+  //1.获得要操作的对象
+  var play = document.querySelector(".play");
+  var full = document.querySelector(".full");
+  var sound =document.querySelector(".sound");
+  var video = document.querySelector("video");
+  var rang1 = document.querySelector(".range1");
+  var range2 = document.querySelector(".range2");
+  var lis = document.querySelectorAll("li");
+  //2. 给事件源注册事件
+  // 控制播放或是暂停
+  play.addEventListener("click",function (){
+      if(this.classList.contains('fa-pause')){
+        video.pause();// 让当前的视频暂停
+        this.classList.remove('fa-pause');
+        this.classList.add('fa-play');
+      }else {
+        video.play();// 让当前的视频暂停
+        this.classList.remove('fa-play');
+        this.classList.add('fa-pause');
+      }
+  })
+  // 3. 全屏功能
+  full.addEventListener('click',function (){
+         video.webkitRequestFullScreen();
+  })
+  
+  // 4. 让视频的播放和进度条同步
+  video.addEventListener('timeupdate',function (){
+    // 让视频播放的进度除以总的播放时间，再乘以100，将此值给到进度条
+    rang1.value = this.currentTime/this.duration*100;
+  });
+  // 5. 让进度条控制视频的播放位置或是播放时间
+  rang1.addEventListener('input',function (){
+    // 将进度条的进度除以100，用这个百分比乘以视频总时长，就是视频当前的播放位置，可以实现视频和进度条同步
+       video.currentTime =   this.value/100*video.duration;
+  })
+  
+  //6. 控制音量   当第二个进度条改变的时候，要改变视频的声音大小
+  range2.addEventListener('input',function (){
+        video.volume= this.value/100;
+        if(video.volume==0){
+          sound.classList.remove('fa-volume-up');
+          sound.classList.add('fa-volume-off');
+        }else {
+          sound.classList.remove('fa-volume-off');
+          sound.classList.add('fa-volume-up');
+        }
+  })
+  //7. 视频列表的控制
+  for(var i=0;i<lis.length;i++){
+    lis[i].addEventListener("click",function (){
+           video.src = this.dataset['src'];// 将当前的li标签下的自定义属性的值，给到video标签
+      video.load();
+            // video.value = 0;
+    })
+  }
+  // currentTime  当前视频播放的位置或是时间
+  // duration  整个视频的时间
+  //currentTime:当前时间
+  //duration：总长时间
+  //timeupdate:播放进度更改时触发的事件
+  //volume：控制音量
+</script>

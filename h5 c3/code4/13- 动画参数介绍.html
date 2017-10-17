@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>动画</title>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      background-color: red;
+      margin: 200px auto;
+      
+      /*调用动画的名称*/
+      animation-name: play;
+      
+      /*动画持续的时间*/
+      animation-duration: 2s;
+      /*运动曲线*/
+      /*animation-timing-function: linear;*/
+      /*animation-timing-function: steps(2);*/
+      /*动画延迟多长时间执行*/
+      /*animation-delay: 2s;*/
+      /*动画执行的次数  默认是1次  可以设置具体的次数，infinite无限循环*/
+      animation-iteration-count: 2;
+      /*animation-iteration-count: infinite;*/
+      
+      /*设置动画是否反向运动*/
+      /*animation-direction: reverse;*/
+      /*animation-direction: alternate;*/
+      /*animation-direction: alternate-reverse;*/
+      
+      /*动画函数执行完成后的状态*/
+      /*animation-fill-mode: forwards;   !*运动完成之后，停留在最后的状态*!*/
+      /*animation-fill-mode: backwards;   !*运动完成之后，停留在最后的状态*!*/
+    }
+    div:hover {
+      animation-play-state: paused;
+    }
+    /*
+      1. 先定义动画   关键@keyframes  后面跟动画名称
+      2. 大括号内，写动画开始的原始状态from{}   to{} 运动到的状态
+      3. 谁要进行动态状态，就给谁调用动画名称  animation:
+    */
+    @keyframes play {
+      from{   /*初始状态*/
+        width: 200px;
+        height: 200px;
+        background-color: red;
+      }
+      to {   /*目标状态*/
+        width: 400px;
+        height: 500px;
+        background-color: blue;
+      }
+    }
+  </style>
+</head>
+<body>
+<div></div>
+</body>
+</html>

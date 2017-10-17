@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>not</title>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      border: 1px solid #000;
+    }
+    div:not(.box4) {
+      background-color: red;
+    }
+    /*()里面放的是选择器*/
+    /*div:not(:nth-child(3)) {
+      background-color: blue;
+    }*/
+    /* 没有子元素的div*/
+   /* div:empty {
+      background-color: purple;
+    }*/
+    /* first-letter   f */
+  </style>
+</head>
+<body>
+<div class="box box1"></div>
+<div class="box box2">
+  <p></p>
+</div>
+<div class="box box3">
+  <span></span>
+</div>
+<div class="box box4"></div>
+</body>
+</html>

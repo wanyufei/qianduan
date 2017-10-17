@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        canvas{
+            border: 1px solid black;
+        }        
+    </style>
+</head>
+<body>
+    <canvas id="canvas" width="600" height="400"></canvas>
+    <script type="text/javascript">
+        //得到画布，上下文
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext("2d");
+        //当前帧序号
+        var frameNumber = 0;
+        //帧率。frames per second
+        var FPS = 50;
+
+
+        //罗列游戏需要的所有图片
+        var resouseURLArr = ["images/2.png"];
+
+        var imagesArr = []; //存放图片对象的数组
+        var alreadyLoadImageNumber = 0; //加载完毕的图片数量。
+        //循环语句，依次加载这些图片
+        for(var i = 0 ; i < resouseURLArr.length ; i++){
+            imagesArr[i] = new Image();
+            imagesArr[i].src = resouseURLArr[i];
+            imagesArr[i].onload = function(){
+                //某一张图片加载完成的事情
+                alreadyLoadImageNumber++;
+                ctx.clearRect(0,0,canvas.width,canvas.height);
+                ctx.font = "40px 微软雅黑";
+                ctx.fillText("正在加载资源" + alreadyLoadImageNumber + "/" + resouseURLArr.length,100,100);
+                if(alreadyLoadImageNumber == resouseURLArr.length){
+                    game.run();
+                }
+            }
+        }
+
+        //游戏也是一个类
+        function Game(){
+
+        }
+        Game.prototype = {
+            mainloop : function(){
+                //主循环，这个函数每帧执行一次。
+                frameNumber++;
+                ctx.clearRect(0,0,canvas.width,canvas.height);
+                //打印帧序号
+                ctx.font = "20px 黑体";
+                ctx.fillText("当前帧序号：" + frameNumber,0,20);
+
+                //每帧都要更新小女孩
+                girl.update();
+                girl.render();
+            },
+            run : function(){
+                var self = this;
+                setInterval(function(){
+                    self.mainloop();
+                },1000 / FPS);
+            }
+        }
+
+        //女孩类
+        function Girl(x,y){
+            this.x = x;
+            this.y = y;
+            this._state = 0;
+            this._image = imagesArr[0];
+            this.isAnimate = true;
+        }
+        //女孩的原型
+        Girl.prototype = {
+            update : function(){
+                //只有当这个小女孩在运动的时候，我们改变自己的state
+                if(this.isAnimate) {
+                    this.x++;
+                    if(frameNumber % 3 == 0){
+                        this._state++;
+                    }
+                    if (this._state > 7) {
+                        this._state = 0;
+                    }
+                }else{
+                    this._state = 0;
+                }
+            },
+            render : function(){
+                ctx.drawImage(this._image,79 * this._state , 108 * 2,79,108,this.x,this.y,79,108);
+            },
+            stop : function(){
+                this.isAnimate = false;
+            },
+            animate : function(){
+                this.isAnimate = true;
+            }
+        }
+
+        var game = new Game();
+        var girl = new Girl(100,100);
+
+        canvas.onclick = function(){
+            girl.isAnimate = !girl.isAnimate;
+        }
+    </script>
+</body>
+</html>

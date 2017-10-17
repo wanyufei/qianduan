@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .demo {
+      width: 200px;
+      height: 200px;
+      background-color: red;
+    }
+    .box {
+      width: 400px;
+      height: 400px;
+      border: 1px solid #000;
+      position:absolute;
+      left: 500px;
+      top: 300px;
+    }
+  </style>
+</head>
+<body>
+<div class="demo" draggable="true"></div>
+<div class="box"></div>
+</body>
+</html>
+<script>
+  var demo = document.querySelector(".demo");
+  var box = document.querySelector(".box");
+  // 在拖拽一开始的时候，就会被触发
+//  demo.addEventListener('dragstart',function (){
+//         console.log("我被拖拽了。。。");
+//  });
+//  // 只要是处于拖拽状态，就一直被触发，只要灵魂没有归位就一直触发 着
+//  demo.addEventListener('drag',function (){
+//         console.log("drag事件被触发了");
+//  })
+//  // 拖拽结束时的事件
+//  demo.addEventListener('dragend',function (){
+//         console.log("终于还原了。。。");
+//  })
+  
+  // 目标元素的拖拽，只要拖拽元素在目标元素，就会触发
+  box.addEventListener("dragover",function (e){
+         console.log("目标元素的拖拽");
+         e.preventDefault()
+  })
+  box.addEventListener("drop",function (){
+    // appendChild具有剪切的功能
+    box.appendChild(demo);
+  })
+</script>

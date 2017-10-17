@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>调整主侧轴方向</title>
+  <style>
+    *{
+        margin:0;
+        padding:0;
+    }
+    ul {
+      width: 800px;
+      height: 400px;
+      border: 1px solid #000;
+      margin: 200px auto;
+      list-style: none;
+      display: flex;   /*让ul变成一个伸缩布局的盒子*/
+      /*justify-content: space-between;*/
+      justify-content: center;
+      /*flex-wrap: nowrap;  默认是不换行的*/
+      flex-wrap: wrap;   /**设置子盒子换行*/
+      
+    }
+    li {
+      width: 100px;
+      /*height: 100px;*/
+      border: 1px solid #000;
+      background-color: orangered;
+    }
+  </style>
+</head>
+<body>
+<ul>
+  <li>1</li>
+  <li>2</li>
+  <li>3</li>
+  <li>4</li>
+  <li>5</li>
+  <li>6</li>
+  <li>7</li>
+  <li>8</li>
+  <li>9</li>
+  <li>10</li>
+</ul>
+</body>
+</html>

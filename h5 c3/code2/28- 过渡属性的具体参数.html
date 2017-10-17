@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>过渡的参数</title>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      background-color: blue;
+      /*谁要过渡，哪个元素需要有过渡的效果，就需要给谁添加transition属性*/
+      /*transition: width 2s 1s,height 3s,background-color 4s;*/
+      transition: all  2s 1s ease;   /*linear  ease  easeInout  easeIn*/
+    }
+    div:hover {
+      width: 500px;
+      height: 600px;
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+<div></div>
+</body>
+</html>

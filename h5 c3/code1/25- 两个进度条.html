@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>两个进度条</title>
+</head>
+<body>
+<!--progress   一般是用于密码强度  上传或是下载文件的进度-->
+<progress value="10" max="100"></progress>
+<input type="button" value="按钮">
+<!--磁盘存储文件的表示-->
+<meter max="100" value="60"></meter>
+
+很少用，工作当中一般用两个div嵌套来表示一个进度
+</body>
+</html>
+<script>
+  var pro = document.querySelector("progress");
+  var btn = document.querySelector("input");
+  btn.onclick = function (){
+    setInterval(function (){
+      pro.value +=1;
+    },30);
+  }
+  
+</script>

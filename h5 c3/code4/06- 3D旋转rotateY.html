@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>3D旋转-rotateY</title>
+  <style>
+    body {
+      perspective: 1000px;
+    }
+    img {
+      display: block;
+      margin: 100px auto;
+      transition: all 5s;
+      /*transform-origin: left;*/
+    }
+    img:hover {
+      /*正值的角度的时候，是往里转，负值的时候，是往外转*/
+      /*transform: rotateY(-180deg);*/
+      transform: rotateZ(-180deg);
+      
+      /*rotateX 正值的度数的时候，是一个推倒的效果，是往里，负数的时候，是一个向外的效果*/
+      /*rotateZ  正值的时候，是一个顺时针的效果，负值的时候，是一个逆时针的效果*/
+    }
+  </style>
+</head>
+<body>
+<img src="images/smalls.png" alt="">
+</body>
+</html>

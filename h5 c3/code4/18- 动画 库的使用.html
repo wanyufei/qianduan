@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>动画库的使用</title>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      background-color: red;
+      margin: 200px auto;
+      /*animition: fadeInDown*/
+      animation:fadeInDown 1s .2s ease both;
+      -moz-animation:fadeInDown 1s .2s ease both;
+    }
+    /*#animation{*/
+      /*-webkit-animation:fadeInDown 1s .2s ease both;*/
+      /*-moz-animation:fadeInDown 1s .2s ease both;*/
+    /*}*/
+    @keyframes fadeInDown{
+      0%{opacity:0;
+        -webkit-transform:translateY(-20px)}
+      100%{opacity:1;
+        -webkit-transform:translateY(0)}
+    }
+    @-moz-keyframes fadeInDown{
+      0%{opacity:0;
+        -moz-transform:translateY(-20px)}
+      100%{opacity:1;
+        -moz-transform:translateY(0)}
+    }
+  </style>
+</head>
+<body>
+<div id="animation"></div>
+</body>
+</html>

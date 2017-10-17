@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>反面不可见</title>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+      transition:all 1s;
+      margin: 200px auto;
+      line-height: 200px;
+      text-align: center;
+      font-size: 30px;
+      /*反而不可见*/
+      backface-visibility: hidden;
+    }
+    div:hover {
+      transform: rotateY(180deg);
+    }
+  </style>
+</head>
+<body>
+<div>这是一个文字</div>
+</body>
+</html>

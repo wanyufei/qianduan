@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>属性选择器</title>
+  <style>
+    /*所有的具此属性的标签*/
+     /*li[data-rol] {*/
+       /*background-color: red;*/
+     /*}*/
+    
+    /*选择所有的li标签当中的具有此属性的*/
+    /*li[data-rol='data'] {*/
+      /*background-color: blue;*/
+    /*}*/
+    
+    /*以data开头的属性*/
+    /*li[data-rol^='data'] {*/
+      /*background-color: red;*/
+    /*}*/
+    
+    /*li标签的属性中以aa结尾的元素*/
+    /*li[data-rol$='aa'] {*/
+      /*background-color: blue;*/
+    /*}*/
+    
+    /*li标签当中的属性，只要包含data即可*/
+    /*li[data-rol*='data'] {*/
+    
+      /*background-color: red;*/
+    
+    /*}*/
+    
+    /*是以data开头，并有-属性的元素，如果没有-，自身也可以*/
+    li[data-rol|='data'] {
+      background-color: blue;
+    }
+    
+    
+  </style>
+</head>
+<body>
+<ul>
+  <li data-rol="data">这是第1个li标签</li>
+  <li data-rol="dataa">这是第2个li标签</li>
+  <li data-rol="data2">这是第3个li标签</li>
+  <li data-rol="data3">这是第4个li标签</li>
+  <li data-rol="datamm">这是第5个li标签</li>
+  <li data-rol="ccda ta">这是第6个li标签</li>
+  <li data-rol="data-kk">这是第7个li标签</li>
+  <li data-rol="data7 data6">这是第8个li标签</li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>京东侧边栏</title>
+  <style>
+    *{
+        margin:0;
+        padding:0;
+      list-style: none;
+    }
+    i,em {
+      font-style: normal;
+    }
+    .box {
+      margin: 100px;
+      position:fixed;
+      /*right: -110px;*/
+      /*right: 0px;*/
+    }
+    .box li {
+      width: 40px;
+      height: 40px;
+      background-color: #ccc;
+      position: relative;
+      margin: 10px;
+    }
+    .box li i {
+      display: block;
+      width: 40px;
+      height: 40px;
+      background: #ccc url(img/jdm-toolbar-icons.png) no-repeat -49px 1px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+    .box li em {
+      width: 100px;
+      height: 40px;
+      position: absolute;
+      top: 0;
+      /*right: -100px;*/
+      background-color: #ccc;
+      text-align: center;
+      line-height: 40px;
+      color: #fff;
+      transition: all 0.5s;
+    }
+    .box li:hover em{
+      transform: translateX(-140px);
+      background-color: pink;
+    }
+    .box li:hover i {
+      background-color: pink;
+    }
+  </style>
+</head>
+<body>
+<div class="box">
+  <ul>
+    <li>
+      <i></i>
+      <em>购物车</em>
+    </li>
+    <li>
+      <i></i>
+      <em>我的关注</em>
+    </li>
+    <li>
+      <i></i>
+      <em>京东会员</em>
+    </li>
+    <li>
+      <i></i>
+      <em>我的足迹</em>
+    </li>
+  </ul>
+</div>
+</body>
+</html>

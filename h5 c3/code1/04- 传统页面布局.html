@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>传统页面布局</title>
+  <style>
+    .header,
+    .nav,
+    .section,
+    .footer {
+      width: 1000px;
+      background-color: #f7f7f7;
+      border: 1px solid #000;
+      margin: 5px auto;
+    }
+    .header {
+      height: 100px;
+      background-color: pink;
+    }
+    .nav {
+      height: 80px;
+      background-color: purple;
+    }
+    .section {
+      height: 600px;
+    }
+    .aside {
+      width: 400px;
+      height: 600px;
+      background-color: skyblue;
+      float: left;
+    }
+    .article {
+      width: 600px;
+      height: 600px;
+      background-color: yellow;
+      float: left;
+    }
+    .footer {
+      height: 80px;
+      background-color: deepskyblue;
+    }
+  </style>
+</head>
+<body>
+<div class="header">头部</div>
+<div class="nav">导航</div>
+<div class="section">
+  <div class="aside">侧边栏</div>
+  <div class="article">文章内容</div>
+</div>
+<div class="footer">底部</div>
+</body>
+</html>

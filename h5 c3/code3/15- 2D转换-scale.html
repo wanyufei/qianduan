@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>scale</title>
+  <style>
+    div {
+      float: left;
+      margin: 100px;
+      border: 1px solid blue;
+      overflow: hidden;
+      /*transform-origin: 20px 20px ;*/  /*对于scale没有起作用*/
+    }
+    div:first-child {
+      width: 220px;
+      height: 220px;
+    }
+    div:nth-child(2) {
+      width: 500px;
+      height: 384px;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      vertical-align: top;
+      transition: all 0.8s;
+    }
+    div:hover img {
+      /*缩放的时候，一般是设置一个位数，有两个参数，第一个参数表示水平方向，第二个参数表示 垂直方向，如果第二个参数不写的话，默认以第一个参数为准*/
+      /*transform: scale(1.5);*/
+      /*transform: scale(1.5,1);*/
+      transform: scale(0.6);
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <img src="images/xiaom1.jpg" alt="">
+  </div>
+<div><img src="images/m1.jpg" alt=""></div>
+</body>
+</html>

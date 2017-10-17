@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>html5新标签的兼容性</title>
+  <style>
+    header {
+      width: 200px;
+      height: 400px;
+      background-color: pink;
+      display: block;
+    }
+  </style>
+  <!--[if lte  ie 8]>
+  <script>
+    /**
+     * 低版本的浏览器 比如IE8 对于 HTML5新增加的标签是不认的，默认是认为不存在
+     * hack
+          l    less     小于
+          t    than     比较
+          e    equal    相等  等于
+          g    greate   大于
+     */
+    alert(123);
+    document.createElement("header");  // IE8 支持动态创建的元素，但是动态创建出来的元素在IE8里面认为是一个行内的标签
+  </script>
+  <![endif]-->
+</head>
+<body>
+<header>这是一个头部的header标签</header>
+</body>
+</html>

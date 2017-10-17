@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>旋转的扑克牌</title>
+  <style>
+    div {
+      width: 220px;
+      height: 300px;
+      margin: 200px auto;
+      position: relative;
+    }
+    img {
+      transition: all 1s;
+      transform-origin: left top;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+    }
+    /*div:hover img: {*/
+      /*transform: rotate(270deg);*/
+    /*}*/
+    div:hover img:first-child {
+      transform: rotate(60deg);
+    }
+    div:hover img:nth-child(2) {
+      transform: rotate(120deg);
+    }
+    div:hover img:nth-child(3) {
+      transform: rotate(180deg);
+    }
+    div:hover img:nth-child(4) {
+      transform: rotate(240deg);
+    }
+    div:hover img:nth-child(5) {
+      transform: rotate(300deg);
+    }
+    div:hover img:nth-child(6) {
+      transform: rotate(360deg);
+    }
+  </style>
+</head>
+<body>
+<div>
+  <img src="images/pk1.png" alt="">
+  <img src="images/pk1.png" alt="">
+  <img src="images/pk1.png" alt="">
+  <img src="images/pk1.png" alt="">
+  <img src="images/pk1.png" alt="">
+  <img src="images/pk1.png" alt="">
+</div>
+</body>
+</html>

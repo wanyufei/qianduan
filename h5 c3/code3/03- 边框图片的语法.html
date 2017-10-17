@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>边框图片语法</title>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      border: 27px solid #000;
+      margin: 100px auto;
+      /*border-image-source: url(images/border01.png);*/
+      /*border-image: url(images/border01.png)*/
+      /*border-image-slice: 27;*/
+      /*border-image-repeat: stretch;   !*默认值就是拉伸*!*/
+      /*border-image-repeat: repeat;*/
+      /*border-image-repeat: round;*/
+      /*border-image-outset: 100px;*/
+      
+      border-image:url(images/border01.png) 27 round;   /*合写的方式*/
+      background: url(images/m1.jpg) no-repeat center center/200px 200px;
+    }
+  </style>
+</head>
+<body>
+<div></div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>扫光效果</title>
+  <style>
+    body {
+      background-color: #000;
+    }
+    div {
+      width: 500px;
+      height: 384px;
+      margin: 160px auto;
+      position: relative;
+      overflow: hidden;
+    }
+    div::after {
+      content:'';
+      position: absolute;
+      height: 420px;
+      width: 50px;
+      top: 0;
+      left: -260px;
+      background-image: linear-gradient(
+        to right,
+      rgba(255,255,255,0),
+      rgba(255,255,255,1),
+      rgba(255,255,255,0)
+      );
+      /*transform: rotate(45deg);*/
+      transform: skew(-45deg);
+      transition: all 1s;
+    }
+    div:hover::after {
+      left: 700px;
+    }
+  </style>
+</head>
+<body>
+<div>
+  <img src="images/m1.jpg" alt="">
+</div>
+</body>
+</html>

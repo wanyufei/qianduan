@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>file属性</title>
+</head>
+<body>
+<input type="file" multiple>
+</body>
+</html>
+<script>
+  var input = document.querySelector("input");
+  input.addEventListener('change',function (){
+//         console.log(123);
+    console.log(this.files);
+    // input标签的files属性，可以获取到所有的上传的文件，这个上属性是属于一个伪数组
+  })
+</script>

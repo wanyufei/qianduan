@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>呼吸灯效果</title>
+  <style>
+    body {
+      background-color: #000;
+    }
+    div {
+      width: 200px;
+      height: 60px;
+      background-color: orangered;
+      margin: 200px auto;
+      border-radius: 10px;
+      animation: play 1s ease-in-out infinite alternate;
+    }
+    @keyframes play {
+      from {
+        opacity: 0.2;
+        box-shadow: 0 0 5px 5px #ff9922;
+      }
+      to {
+        opacity: 1;
+        box-shadow: 0 0 30px 5px #ff9922;
+      }
+    }
+  </style>
+</head>
+<body>
+<div></div>
+</body>
+</html>

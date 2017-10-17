@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>线性渐变</title>
+  <style>
+    .box{
+      width: 1000px;
+      height: 600px;
+      margin: 0 auto;
+      
+    }
+    div {
+      margin-bottom: 5px;
+    }
+    .demo:first-child {
+      width: 1000px;
+      height: 100px;
+      /*background-color: red;*/
+      /*background-image:-webkit-linear-gradient(left, red 10%,blue 80%);*/
+      /*background-image:-moz-linear-gradient(left, red 10%,blue 80%);*/
+      /*background-image:-ms-linear-gradient(left, red 10%,blue 80%);*/
+      
+      /*渐变的方向   渐变开始的颜色   渐变开始的位置   渐变结束的颜色   渐变结束的位置*/
+      background-image: linear-gradient(to right,red, blue);
+    }
+    .demo:nth-child(2) {
+      height: 100px;
+      background-image: linear-gradient(to right,red 10%, blue 80%);
+    }
+    .demo:nth-child(3) {
+      width: 100px;
+      height: 100px;
+      background-color: purple;
+    }
+    .demo:nth-child(4) {
+      width: 800px;
+      height: 100px;
+      background-color: pink;
+    }
+    .demo:nth-child(5) {
+      height: 100px;
+      background-image:linear-gradient(red,blue);   /*默认是从上到下进行渐变的*/
+    }
+    .demo:nth-child(6) {
+      width: 300px;
+      height: 300px;
+      background-image: linear-gradient(60deg,red,blue);
+    }
+    .demo:nth-child(7) {
+      height: 100px;
+      background-image: linear-gradient(
+        to right,
+         red 0%,
+         orange 18%,
+          yellow 35%,
+          green 53%,
+          pink 71%,
+          blue 89%,
+        purple 100%
+      );
+    }
+    .demo:nth-child(8) {
+      height: 100px;
+      background-image: linear-gradient(
+      to right,
+      red 0%,
+      yellow 30%,
+      blue 50%,
+      purple 80%,
+      hotpink 100%
+      )
+    }
+    .demo:nth-child(9) {
+      height: 100px;
+      background-image: linear-gradient(
+      45deg,
+        red 0%,
+        red 25%,
+      blue 25%,
+      blue 50%,
+      yellow 50%,
+      yellow 75%,
+      green 75%,
+      green 100%
+      );
+    }
+    .demo:nth-child(10) {
+      height: 100px;
+      background-image: linear-gradient(
+          135deg,
+          #fff 0%,
+          #fff 25%,
+          #000 25%,
+          #000 50%,
+          #fff 50%,
+          #fff 75%,
+          #000 75%,
+          #000 100%
+      );
+      background-size: 100px 100px;
+      /*background-repeat:no-repeat;*/
+      animation: gundong 1s linear infinite;
+    }
+    @keyframes gundong {
+      0%{
+      
+      }
+      100% {
+        background-position: 100px;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="box">
+  <div class="demo"></div>
+  <div class="demo"></div>
+  <div class="demo"></div>
+  <div class="demo"></div>
+  <div class="demo"></div>
+  <div class="demo"></div>
+  <div class="demo"></div>
+  <div class="demo"></div>
+  <div class="demo"></div>
+  <div class="demo"></div>
+</div>
+</body>
+</html>

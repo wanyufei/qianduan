@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script>
+    /**
+     * 选择器
+     * 关系选择器   +     ~
+     * 属性选择器
+     *      li[class]     具有这个class类的所有的标签
+     *      li[class='box']   li标签中属性和属性值符合 要求的
+     *      li[class^='box']  属性中以box开头的li标签
+     *      li[class$='box']  属性中以box开头的li标签
+     *      li[class*='box']  属性中包含box值的li标签
+     *      li[class|='box']  获取属性值是box-的标签，如果没有-，有自身box也可以
+     *      li[class~='box']  具有多个属性，其中一个为box
+     * 伪类选择器
+     *      :first-child     获取父元素中的第一个子元素，而且还得和前面的元素一致
+     *      :last-child
+     *      :nth-child()
+     *      :nth-child(2n)  凡是涉及到n的话，默认是从0开始
+     *      :nth-child(2n+1)
+     *      :nth-child(odd)
+     *      :nth-child(even)
+     *
+     *      p:nth-of-type(2)   获取父元素中的第2个和前面的标签一致的子标签
+     * 其它选择器：
+     *      :enabled  :disabled  :checked :target :not()
+     */
+    
+  </script>
+</head>
+<body>
+<div class="box1 box2 box">
+  <p></p>
+  <span></span>
+  <h2></h2>
+  <p></p>
+</div>
+</body>
+</html>

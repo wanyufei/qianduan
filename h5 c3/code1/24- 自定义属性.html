@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<span index="abc0" mmm="kkk" data-price="125" data-my-name="新的名称">这是一个span标签</span>
+</body>
+</html>
+<script>
+  var span = document.querySelector("span");
+  // 原生JS当中的是 setAttribute()   getAttribute()  removeAttribute()
+  
+  // HTML5中，推荐 凡是自定义属性都需要以 data- 开头
+  // 访问对象的属性的方式有两种 一个是.的方式  再一个是中括号的方式
+  console.log(span.dataset['price']);
+  console.log(span.dataset['myName']);
+  // background-color    backgroundColor
+</script>

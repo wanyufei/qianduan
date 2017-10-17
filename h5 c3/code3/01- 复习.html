@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script>
+    /**
+     * 1. 选择器
+     *      属性选择器
+     *          [class]            标签里面只要有class属性即可
+     *          [class='box']        必须和class='box'匹配的标签对象
+     *          [class^='box']       class的属性值以box开头
+     *          [class$='box']      class的属性以box结尾
+     *          [class*='box']       属性值里面包含box 即可
+     *          [class|='box']       box-    自身也可以
+     *          [class~='box']       如果有多个属性，其中一个是box即可
+     *      伪类
+     *          :first-child        获取父元素中的第一个子元素，而且子元素和:之前的标签对象还得一样
+     *          :last-child
+     *          :nth-child()        获取父元素中的第N个子元素，子元素和前面的元素一致
+     *
+     *          p:nth-of-type(2)      获取的是父元素中的第N个子元素，和前面元素类型一致
+     *       伪元素：
+     *          ::first-letter      获取第一行中的第一个字
+     *          ::first-line        获取第一行
+     *          ::before            设置的是标签内容的前面或是后面，默认是一个行内元素  content:''不能省略
+     *          ::after
+     *          ::selection         获取选中的文本
+     *       其它选择器
+     *          enabled   disabled   checked   empty   not   target
+     *  2.  背景
+     *          background-size:     背景图片的大小
+     *                contain:         等比例缩放，只要有一边到达目标位置，就不变了   不会失真，会留白
+     *                cover:           等比例缩放，全部给覆盖掉  也不会真，但有部分可能看不到
+     *                宽度     高度      有可能会失真
+     *          background-origin:    原点或起源
+     *                border-box:
+     *                padding-box:      默认
+     *                content-box:
+     *          background-clip:     背景裁切
+     *                border-box:
+     *                padding-box:
+     *                content-box:
+     *          多背景：
+     *               可以添加多个背景   url(),url()
+     *                  水平  垂直 / 100px  120px
+     *  3.  过渡    两个状态之间的变化
+     *          transition-proerty:   哪个属性需要过渡
+     *          transition-duratiion:   过渡持续的时间    也就是在多长时间内完成状态的一个改变
+     *          transition-timing-function:   运动曲线
+     *          transition-delay:     延迟多长时间      就是在多长时间之后进行状态的改变
+     *  4.   文字阴影
+     *          text-shadow:
+     *              水平位置   垂直位置    模糊程序  颜色;
+     *  5.  边框圆角
+     *          border-radius:
+     *          border-image:
+     *          box-shadow:
+     */
+     
+  </script>
+</head>
+<body>
+
+</body>
+</html>

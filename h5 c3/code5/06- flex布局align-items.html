@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>调整主侧轴方向</title>
+  <style>
+    *{
+        margin:0;
+        padding:0;
+    }
+    ul {
+      width: 800px;
+      height: 400px;
+      border: 1px solid #000;
+      margin: 200px auto;
+      list-style: none;
+      display: flex;   /*让ul变成一个伸缩布局的盒子*/
+     /*justify-content: flex-start;   默认的排列方式*/
+      /*!*justify-content: flex-end;*!   尾部开始排列*/
+      /*justify-content: center;*/
+      /*justify-content: space-between;*/
+      justify-content: space-around;
+      
+      /*align-items: 设置的是没有换行的情况下的侧轴的排列方式*/
+      /*align-items: flex-start;*/
+      /*align-items: flex-end;*/
+      /*align-items: center;*/
+      
+      /*在子元素不设置高度的情况下，会把子元素的高度进行拉伸，拉伸到父元素一样高*/
+      align-items: stretch;
+    }
+    li {
+      width: 100px;
+      /*height: 100px;*/
+      border: 1px solid #000;
+      background-color: orangered;
+    }
+  </style>
+</head>
+<body>
+<ul>
+  <li>1</li>
+  <li>2</li>
+  <li>3</li>
+  <li>4</li>
+</ul>
+</body>
+</html>

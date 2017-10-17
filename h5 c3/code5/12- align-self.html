@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>设置子盒子的空间分配</title>
+  <style>
+    *{
+        margin:0;
+        padding:0;
+    }
+    ul {
+      width: 600px;
+      height: 400px;
+      margin: 200px auto;
+      list-style: none;
+      border: 1px solid #000;
+      display: flex;
+    }
+    li {
+      height: 100px;
+      background-color: orangered;
+      border: 1px solid #000;
+    }
+    
+    /* order用来排列子元素的顺序*/
+    
+    /*align-items是用来设置整个的子元素在侧轴的布局方式*/
+    /*align-self: 是用来设置单个的子元素在侧轴的布局方式，优先级要align-items要高，取值是一样的*/
+    li:nth-child(1) {
+      flex: 1;
+      order: 1;
+      align-self:  center;
+    }
+    li:nth-child(2) {
+      flex: 2;
+      order:2;
+    }
+    li:nth-child(3) {
+      flex:3;
+    }
+    /*
+        1. display: flex :给父元素设置的属性，让父元素变成一个伸缩布局
+        2. justify-content: 设置子元素在主轴的布局方式
+                 flex-start   flex-end  center  space-between  space-around
+        3. align-items: 设置子元素在侧轴的布局方式，取值有四个
+                 flex-start  flex-end  center  stretch
+        4. flex-wrap:  nowrap     wrap
+        5. align-content:  这个属性是用来设置多行子元素在侧轴的布局方式   取值有6个
+            flex-start  flex-end  center  stretch space-between  space-around
+        6.  flex 属性是用来设置子元素均分父元素宽度的方式
+        7.  order 设置每个子元素的显示或是排列顺序  默认是0 ，值越小越靠前
+        8.  align-self:  与align-items的取值和用法 是一样的，只是比align-items的优先级要高
+                align-items属性是用来设置整行子元素在侧轴的显示或是排列方式
+                align-self: 是用来设置单个的子元素在侧轴的显示或是排列方式
+    
+         伸缩导航
+         touchstart  touchend  touchmove
+    */
+  </style>
+</head>
+<body>
+<ul>
+  <li>1</li>
+  <li>2</li>
+  <li>3</li>
+</ul>
+</body>
+</html>

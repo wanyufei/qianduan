@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>边框圆角</title>
+  <style>
+    div {
+      width: 240px;
+      height: 240px;
+      line-height: 240px;
+      border: 1px solid red;
+      margin-bottom: 5px;
+    }
+    div:first-child {
+      border-radius: 20px/50px;
+      border: 20px solid red;
+    }
+    div:nth-child(2) {
+      border-radius: 50px;
+    }
+    div:nth-child(3) {
+      border-radius: 50%;
+    }
+    div:nth-child(4) {
+      border-radius: 50% 50% 50% 0;
+    }
+    div:nth-child(5) {
+      border-radius: 50% 0;
+    }
+    div:nth-child(6) {
+       border-radius: 50% 50% 0 0;
+     }
+    div:nth-child(7) {
+      border-radius: 50%;
+      height: 100px;
+    }
+    div:nth-child(8) {
+      border-radius: 120px 120px 0 0;
+      height: 100px;
+    }
+    div:nth-child(9) {
+      border-radius: 240px 0 0 0;
+    }
+    div:nth-child(10) {
+      border-radius: 120px;
+      /*border-radius: 50%;*/
+      height: 100px;
+    }
+  </style>
+</head>
+<body>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div>border-radius: 200px 0 0 0;</div>
+<div></div>
+</body>
+</html>

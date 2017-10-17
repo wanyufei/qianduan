@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>视频中弹出广告</title>
+  <style>
+    div {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      position: absolute;
+      left: 200px;
+      top: 60px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+<video src="video/movie.mp4" controls></video>
+<div> 我是烦人的广告</div>
+</body>
+</html>
+<script>
+  // 两个方法pause()  play()
+  // paused   暂停的状态
+  // 多媒体标签的两个事件   pause    play
+  //1.获得要操作的对象
+  var video = document.querySelector("video");
+  var div = document.querySelector("div");
+  //2.给事件源注册事件
+//  video.onpause = function (){
+//      div.style.display = "block";
+//  }
+//  video.onplay = function (){
+//         div.style.display = 'none';
+//  }
+  
+  video.addEventListener("pause",function (){
+    div.style.display = "block";
+  })
+  video.addEventListener('play',function (){
+    div.style.display = 'none';
+  })
+</script>

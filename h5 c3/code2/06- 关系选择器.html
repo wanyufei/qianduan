@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    /* + 相邻选择器*/
+      .li3 + li {
+      background-color: red;
+    }
+    /* 兄弟选择器， 后面所有的兄弟级元素*/
+    /* .li3~ li {
+      background-color: blue;
+    } */
+  </style>
+</head>
+<body>
+<ul>
+  <li>这是第1个li标签</li>
+  <li>这是第2个li标签</li>
+  <li class="li3">这是第3个li标签</li>
+  <li>这是第4个li标签</li>
+  <li>这是第5个li标签</li>
+  <li>这是第6个li标签</li>
+</ul>
+</body>
+</html>

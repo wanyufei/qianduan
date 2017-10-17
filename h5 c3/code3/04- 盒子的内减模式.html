@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>盒子的内减</title>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      margin: 100px auto;
+      background-color: pink;
+      border: 10px solid #000;
+      padding: 20px;
+      /*之前的盒子的真正的宽： width= width+padding+border;*/
+      /*box-sizing: content-box;  !*原来默认的外扩的方式*!*/
+      box-sizing: border-box;    /*就变成盒子的内减模式，内减模式下，设置的宽和高是盒子最终的宽和高，如果要设置边框的话，要在现有的基础上，往里添加，如果有padding,也要往里加，最后将剩余的给到width  height*/
+    }
+  </style>
+</head>
+<body>
+<div></div>
+</body>
+</html>

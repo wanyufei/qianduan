@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>盒子阴影语法</title>
+  <style>
+    body {
+      background-color: #ccc;
+    }
+    div {
+      width: 300px;
+      height: 400px;
+      background-color: #fff;
+      margin: 30px auto;
+    }
+    div:first-child {
+      /*text-shadow:  文字阴影 */
+      box-shadow: 2px 2px 25px 8px #000;
+    }
+    div:nth-child(2) {
+      box-shadow: 10px 10px 15px 10px red inset;
+    }
+    div:nth-child(3) {
+      height: 300px;
+      border-radius: 50%;
+      box-shadow: -28px -21px 142px 100px #000 inset,2px 2px 6px 6px #fff;
+    }
+  </style>
+</head>
+<body>
+<div></div>
+<div></div>
+<div></div>
+</body>
+</html>

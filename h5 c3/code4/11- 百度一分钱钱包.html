@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>百度钱包</title>
+  <style>
+    body {
+      background-color: #f92;
+    }
+    div {
+      width: 306px;
+      height: 304px;
+      /*border: 1px solid #000;*/
+      position: relative;
+      border-radius: 50%;
+      margin: 200px auto;
+      transition:all 1s;
+      transform-style: preserve-3d;
+    }
+    div:hover {
+      transform: rotateY(180deg);
+    }
+    div::before,
+    div::after{
+      content:'';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left:0;
+      top:0;
+      /*反过去之后不可见*/
+      backface-visibility: hidden;
+    }
+    div::before {
+      background: url(images/money5.png) no-repeat right top;
+      transform: rotateY(180deg);
+    }
+    /*
+        1. 多个元素如果同时设置了定位，而且在同个位置显示的话，默认最后的层级最高，会压住前面的盒子
+        2. 设置旋转180deg之后，虽然旋转了，但是层级不变，after还是盖住 before，此时应该让转过去的，变成不可见，需要设置backface-visibility:hidden;
+        3. before自然就可以看到了
+    */
+    div::after {
+      background: url(images/money5.png) no-repeat left top;
+    }
+  </style>
+</head>
+<body>
+<div></div>
+</body>
+</html>

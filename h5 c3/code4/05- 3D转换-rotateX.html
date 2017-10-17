@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>3D-rotate</title>
+  <style>
+    body {
+      perspective: 500px;
+    }
+    img {
+      display: block;
+      margin: 100px auto;
+      transition:all 5s;
+      transform-origin: bottom;
+    }
+    img:hover {
+      /*transform: rotate(-90deg);*/   /*默认正数值的时候，是一个顺时针方向的旋转，相当于是一个Z轴*/
+      /*正值的角度的时候，是一个推倒的效果，是往里，如果是负值的话，则是向外，向外扑的一个效果*/
+      transform: rotateX(180deg);
+    }
+  </style>
+</head>
+<body>
+<img src="images/xiaoming.png" alt="">
+</body>
+</html>

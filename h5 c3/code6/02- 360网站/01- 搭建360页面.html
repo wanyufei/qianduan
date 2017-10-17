@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>360浏览器</title>
+  <style>
+    *{
+        margin:0;
+        padding:0;
+    }
+  </style>
+</head>
+<body>
+<div id="box">
+  <!--每一个class为section的div都是一屏,section这个类是固定的-->
+  <div class="section">第一屏</div>
+  <div class="section">第二屏</div>
+  <div class="section">第三屏</div>
+  <div class="section">第四屏</div>
+  <div class="section">第五屏</div>
+</div>
+</body>
+</html>
+<script src="../js/jquery-1.12.4.js"></script>
+<script src="../js/jquery.fullpage.js"></script>
+<script>
+  $("#box").fullpage({
+    sectionsColor:['#0DA5D6','#2AB561','#DE8910','#16BA9D','#0DA5D6']
+  });
+</script>

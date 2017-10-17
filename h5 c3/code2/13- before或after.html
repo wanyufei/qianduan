@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    /*伪元素就是一个假的元素，不占用内存*/
+    /*div::before {*/
+      /*content:'今天';*/
+     /**/
+    /*}*/
+    /*div::after {*/
+      /*content:'没有下雨';*/
+    /*}*/
+    div:before {
+      content:'今天';
+      
+      /*before和after伪元素中的内容默认是行内的元素*/
+    }
+    div:after {
+      content:'没有下雨';
+    }
+  </style>
+</head>
+<body>
+<div>天气</div>
+</body>
+</html>

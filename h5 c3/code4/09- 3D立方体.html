@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>立方体</title>
+  <style>
+    *{
+        margin:0;
+        padding:0;
+    }
+    body {
+      background-color: #ccc;
+    }
+    ul {
+      width: 200px;
+      height: 200px;
+      margin: 100px auto;
+      list-style:none;
+      /*border: 1px solid #000;*/
+      position: relative;
+      /*perspective: 1000px;*/
+      transform-style: preserve-3d;
+      /*transform: rotateX(45deg) rotateY(45deg);*/
+      /*transition: all 0.8s;*/
+      /*animation: zhuan 2s 3;*/
+      animation: zhuan 2s linear infinite alternate;
+    }
+    /*ul:hover {*/
+      /*transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);*/
+    /*}*/
+    li{
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top:0;
+      text-align: center;
+      font: 700 40px/200px "microsoft yahei";
+    }
+    /*第一个是前面 ，将此面沿Z轴移动100像素即可*/
+    li:first-child {
+      background-color: orangered;
+      transform: translateZ(100px);
+    }
+    /*第二个是上面 ，先旋转90度,然后再沿Z轴移动100px*/
+    li:nth-child(2) {
+      background-color: yellow;
+      transform: rotateX(90deg) translateZ(100px);
+    }
+    /*第三个是背面 */
+    li:nth-child(3) {
+      background-color: purple;
+      transform: rotateX(180deg) translateZ(100px);
+    }
+    /*第四个是底面*/
+    li:nth-child(4) {
+      background-color: pink;
+      transform: rotateX(270deg)  translateZ(100px);
+    }
+    /*第五个是左侧*/
+    li:nth-child(5) {
+      background-color: hotpink;
+      transform: rotateY(-90deg) translateZ(100px);
+    }
+    li:last-child {
+      background-color: cyan;
+      transform: rotateY(90deg) translateZ(100px);
+    }
+    @keyframes zhuan {
+      0%{
+      
+      }
+      100%{
+        transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+      }
+    }
+  </style>
+</head>
+<body>
+<ul>
+  <li>Front</li>
+  <li>top</li>
+  <li>back</li>
+  <li>bottom</li>
+  <li>left</li>
+  <li>right</li>
+</ul>
+</body>
+</html>

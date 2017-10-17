@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>操作类样式</title>
+  <style>
+    .box {
+      width: 500px;
+      height: 200px;
+      border: 1px solid #000;
+    }
+    .demo {
+      border-radius: 50%;
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+<div class="box"></div>
+<input type="button" value="添加类">
+<input type="button" value="删除类">
+<input type="button" value="切换类">
+<input type="button" value="判断类">
+</body>
+</html>
+<script>
+  //1.获得要操作的对象
+  var  box = document.querySelector(".box");
+  var btns = document.querySelectorAll("input"); //类数组   伪数组
+  //2.给事件源注册事件
+  btns[0].onclick = function (){
+//         box.className = "demo";  原生当中
+//        $(box).addClass("demo");
+      box.classList.add("demo");  // 不会覆盖原来的类
+  }
+  btns[1].onclick = function (){
+         box.classList.remove('demo');
+  }
+  btns[2].onclick = function (){
+         box.classList.toggle("demo");
+  }
+  btns[3].onclick = function (){
+    // hasClass("demo")
+      var b =   box.classList.contains("demo");
+      alert(b);
+  }
+</script>

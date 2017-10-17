@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>应该2小米</title>
+  <style>
+    div {
+      float: left;
+      margin: 10px;
+      overflow: hidden;
+      position: relative;
+    }
+    img {
+      vertical-align: top;
+    }
+    div:hover::before {
+      content:'';
+      position: absolute;
+      left:0;
+      top:0;
+      width: 100%;
+      height: 100%;
+      border: 10px solid orangered;
+      box-sizing: border-box;
+    }
+    /*div:hover::before {*/
+      /*content:'';*/
+      /*border: 10px solid orangered;*/
+      /*diplay: block;*/
+    /*}*/
+  </style>
+</head>
+<body>
+<div><img src="img/1.jpg" alt=""></div>
+<div><img src="img/2.jpg" alt=""></div>
+<div><img src="img/3.jpg" alt=""></div>
+<div><img src="img/4.jpg" alt=""></div>
+</body>
+</html>

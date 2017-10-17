@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>体验fullpage</title>
+  <link rel="stylesheet" href="css/jquery.fullpage.css">
+  <style>
+    *{
+        margin:0;
+        padding:0;
+    }
+  </style>
+  <script src="js/jquery-1.12.4.js"></script>
+  <script src="js/jquery.fullpage.js"></script>
+  <script>
+    $(function(){
+        $("#dowebok").fullpage({
+          sectionsColor: ['pink','hotpink','purple','orangered','red'],
+          scrollingSpeed: 600,
+//          loopBottom:true,
+//          loopTop: true
+          loopHorizontal:true,
+          continuousVertical: true,
+          verticalCentered:false,
+          navigation:true,
+          afterLoad:function (anchorLink, index){
+              console.log(index);
+          },
+          onLeave:function (index,nextIndex,diretion){
+                 console.log(index);
+          }
+        });
+    })
+  </script>
+</head>
+<body>
+<div id="dowebok">
+  <div class="section">
+    <h3>第一屏</h3>
+  </div>
+  <div class="section">
+    <h3>第二屏</h3>
+  </div>
+  <div class="section">
+    <h3>第三屏</h3>
+  </div>
+  <div class="section active">
+    <h3>第四屏</h3>
+  </div>
+  <div class="section">
+    <h3>第五屏</h3>
+  </div>
+</div>
+</body>
+</html>

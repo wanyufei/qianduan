@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    form {
+      width: 100%;
+      max-width: 640px;
+      min-width: 320px;
+      margin: 0 auto;
+    }
+    input {
+      width: 100%;
+      height: 24px;
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+      <!--autofocus     自动获得焦点-->
+      <!--autocompulete     提示之前输入过的内容  name   提交过至少一次  默认是on  off-->
+      <!--required          表单不能为空  如果为空，则不提交，会提示用户-->
+      <!--placeholder           占位符 提示用户的内容，用户只要有输入，则自动清空-->
+      <!--invalid事件           当用户输入内容无效的时候  也就是说与匹配规则不一致的时候，触发的事件-->
+      <!--input                当用户输入内容就触发的事件-->
+      <!--pattern                  是自己定义一个验证的规则，参数是一个正则表达式-->
+<form action="" autocomplete="off">
+  <fieldset>
+    <legend>表单数据</legend>
+    <label >
+     用户名： <input type="text" name="userName" autofocus required placeholder="请输入用户名" >
+    </label>
+    <label >
+      密码： <input type="password" name="userPwd" required placeholder="请输入密码">
+    </label>
+    <label >
+      电话号码： <input type="tel" name="userPwd" required pattern="^\d{11}$" oninvalid="this.setCustomValidity('请输入11位的手机号码')" oninput="this.setCustomValidity('')">
+    </label>
+    <input type="submit">
+  </fieldset>
+</form>
+</body>
+</html>

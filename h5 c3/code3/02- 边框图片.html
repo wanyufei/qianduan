@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>边框图片</title>
+  <style>
+    div {
+      width: 300px;
+      height: 300px;
+      background-color: pink;
+      border: 50px solid rgba(0,0,0,.2);
+      /*border-image-width: 50px;*/
+      
+      /*引入图片源*/
+      border-image-source: url(images/b02.jpg);
+      
+      /*从边框向里切割的尺寸 可以有四个值*/
+      /*border-image-slice: 30;*/
+      /*border-image-slice: 60 100;*/
+      border-image-slice: 275 165 279 183;
+      background: url(images/back.jpg) no-repeat center  center/300px 300px;
+    }
+  </style>
+</head>
+<body>
+<div></div>
+</body>
+</html>

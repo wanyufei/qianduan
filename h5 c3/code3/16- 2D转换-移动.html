@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>移动</title>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      background-color: red;
+      transition: all 1s;
+    }
+    div:hover {
+      /*transform: 转换 变换  变形  转型*/
+      /*translate  移动  运动 */
+      /*可以设置两个参数，第一个参数表示水平方向，第二个参数表示垂直方向，如果第二个参数省略的话，则默认是补0*/
+      /*transform: translate(200px);*/
+      /*transform: translate(200px,300px);*/
+      /*transform: translateX(300px);*/
+      /*transform: translateY(300px);*/
+      transform: translateY(-300px);
+      /*transform: translateX(200%);   /*百分比是指的盒子自身宽度*/*/
+       /*translate不会影响到其它的元素*/
+    }
+    div:nth-child(2) {
+      background-color: blue;
+    }
+  </style>
+</head>
+<body>
+<div></div>
+<div></div>
+</body>
+</html>

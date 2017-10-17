@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>伪元素模拟盒子</title>
+  <style>
+    div {
+      width: 300px;
+      height: 300px;
+      border: 1px solid blue;
+      position: relative;
+    }
+    p {
+      width: 100px;
+      height: 100px;
+      background-color: pink;
+    }
+    div::before {
+      content:'这是一个新增加的盒子';
+      width: 80px;
+      height: 80px;
+      display: block;
+      background-color: purple;
+    }
+    div:hover::after {
+      content:'123';
+      width: 120px;
+      height: 120px;
+      background-color: blue;
+      /*display:block;*/
+      position:absolute;
+      left: 160px;
+      top: 120px;
+    }
+  </style>
+</head>
+<body>
+<div>
+  <p>这是一个p标签的内容</p>
+</div>
+</body>
+</html>

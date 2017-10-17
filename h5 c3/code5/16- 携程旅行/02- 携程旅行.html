@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>携程旅行</title>
+  <style>
+    *{
+        margin:0;
+        padding:0;
+    }
+    body {
+      max-width: 640px;
+      min-width: 320px;
+      margin: 0 auto;
+    }
+    
+    header a img {
+      width: 100%;
+      display: block;  /*也可以去掉图片底部的间距*/
+    }
+    /*设置所有的xc-items的盒 样式*/
+    .xc-items {
+      display: flex;  /*将此元素设置成弹性盒子*/
+      /*height: 90px;*/
+      /*padding:0 5px;*/
+      margin: 5px 3px;
+      border-radius: 5px;
+      box-sizing: border-box;  /*设置此盒子为内减模式*/
+      /*margin-top: 5px;*/
+    }
+    .xc-items:nth-child(1) {
+      background-color: hotpink;
+    }
+    .xc-items:nth-child(2) {
+      background-color: #39f;
+    }
+    .xc-items:nth-child(3) {
+      background-color: #44c522;
+    }
+    .xc-items:nth-child(4) {
+      background-color: orangered;
+    }
+    /*设置左侧的布局*/
+    .xc-items-title {
+      flex:1;
+    }
+    /*设置右侧的布局*/
+    .xc-items-content {
+      flex:2;
+      display: flex;
+      flex-wrap: wrap; /*如果所有子元素的宽度的和加起来大于父元素的话，设置此属性可以让子元素强制换行*/
+    }
+    /*设置右侧盒子里面的所有的a标签的布局方式*/
+    .xc-items-content a {
+      width: 50%;
+      height: 45px;
+      border-left: 1px solid #fff;
+      border-bottom: 1px solid #fff;
+      line-height: 45px;
+      text-align: center;
+      box-sizing: border-box;
+      text-decoration: none;
+      color: #fff;
+    }
+    /*设置右侧标签中的最后两个a标签的边框样式*/
+    .xc-items-content a:nth-last-child(-n+2) {
+      /*n的取值是从0开始的，0   1    2   3 */
+      border-bottom: none;
+    }
+    .xc-items:nth-child(4) .xc-items-title {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .xc-items:nth-child(4) .xc-items-title a {
+      width: 100%;
+      /*flex:1;*/
+      height: 45px;
+      line-height: 45px;
+      text-align: center;
+      border-bottom: 1px solid #fff;
+      box-sizing: border-box;
+      text-decoration: none;
+      color: #fff;
+      background-color: orangered;
+    }
+    .xc-items:nth-child(4) .xc-items-title a:last-child {
+      border-bottom: none;
+    }
+    
+    /*设置product盒子*/
+    .xc-product {
+      display: flex;
+    }
+    .xc-product a {
+      flex: 1;
+    }
+    .xc-product a  img{
+      width: 100%;
+      display: block;
+    }
+    
+    /*footer部分开始*/
+    footer ul {
+      display: flex;
+      list-style: none;
+    }
+    footer ul li {
+      height: 40px;
+      flex: 1;
+    }
+    footer ul li a {
+      width: 100%;
+      height: 100%;
+      display: block;
+      line-height: 40px;
+      text-align: center;
+      text-decoration: none;
+      color: #666;
+      border-top: 1px solid #666;
+      border-bottom: 1px solid #666;
+    }
+    footer p {
+      text-align: center;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <a href="#"><img src="images/banner.jpg" alt=""></a>
+</header>
+<nav>
+  <div class="xc-items">
+    <div class="xc-items-title"></div>
+    <div class="xc-items-content">
+      <a href="#">海外酒店</a>
+      <a href="#">海外酒店</a>
+      <a href="#">海外酒店</a>
+      <a href="#">海外酒店</a>
+    </div>
+  </div>
+  <div class="xc-items">
+    <div class="xc-items-title"></div>
+    <div class="xc-items-content">
+      <a href="#">海外酒店</a>
+      <a href="#">海外酒店</a>
+      <a href="#">海外酒店</a>
+      <a href="#">海外酒店</a>
+    </div>
+  </div>
+  <div class="xc-items">
+    <div class="xc-items-title"></div>
+    <div class="xc-items-content">
+      <a href="#">海外酒店</a>
+      <a href="#">海外酒店</a>
+      <a href="#">海外酒店</a>
+      <a href="#">海外酒店</a>
+    </div>
+  </div>
+  <div class="xc-items">
+    <div class="xc-items-title">
+      <a href="#">海外酒店</a>
+      <a href="#">海外酒店</a>
+    </div>
+    <div class="xc-items-content">
+      <a href="#">海外酒店</a>
+      <a href="#">海外酒店</a>
+      <a href="#">海外酒店</a>
+      <a href="#">海外酒店</a>
+    </div>
+  </div>
+</nav>
+<div class="xc-product">
+  <a href="#"><img src="images/extra_1.png" alt=""></a>
+  <a href="#"><img src="images/extra_2.png" alt=""></a>
+</div>
+<footer>
+  <ul>
+    <li><a href="#">电话预订</a></li>
+    <li><a href="#">下载客户端</a></li>
+    <li><a href="#">我的</a></li>
+  </ul>
+  <p>网站地图｜Global sites ｜ 电脑版</p>
+  <p>©2017携程旅行</p>
+</footer>
+</body>
+</html>

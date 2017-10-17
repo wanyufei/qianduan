@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>rotate</title>
+  <style>
+    div {
+      /*transform-origin: left top;*/
+      transform-origin: 50px 50px ;
+    }
+    .box {
+      width: 300px;
+      height: 300px;
+      background-color: red;
+      margin: 200px auto;
+      transition:all 2s;
+    }
+    .box:hover {
+      transform: rotate(180deg);
+      /*transform: rotate(360deg);*/
+      /*transform: rotate(45deg);*/
+    }
+    .demo {
+      width: 500px;
+      height: 384px;
+      margin: 100px auto;
+    }
+    img {
+      transition: all 2s;
+      transform-origin: left top;
+    }
+    .demo:hover img{
+      /*transform: rotate(180deg);*/
+      transform: rotate(-180deg);
+    }
+  </style>
+</head>
+<body>
+<div class="box"></div>
+<div class="demo">
+  <img src="images/m1.jpg" alt="">
+</div>
+</body>
+</html>

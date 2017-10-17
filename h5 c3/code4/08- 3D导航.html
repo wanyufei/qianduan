@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>3D导航</title>
+  <style>
+    *{
+        margin:0;
+        padding:0;
+    }
+    ul {
+      width: 600px;
+      height: 40px;
+      list-style: none;
+      margin: 200px auto;
+      border: 1px solid #000;
+      
+    }
+    /*preserve  保持   perspective 透视的  远景  望远镜 远景，景色，洞察力*/
+    li {
+      width: 100px;
+      height: 40px;
+      position: relative;
+      /*transform: rotateX(-45deg);*/
+      /*让我们人眼能够看到一个3D的场景 让li实现一个3D的效果*/
+      transform-style: preserve-3d;   /*保持的意思*/
+      transition:all 1s;
+      float: left;
+    }
+    li:hover {
+      transform: rotateX(-90deg);
+    }
+    span {
+      width: 100%;
+      height: 100%;
+      line-height: 40px;
+      text-align: center;
+      position: absolute;
+      top:0;
+      left:0;
+    }
+    span:first-child {
+      background-color: blue;
+      transform: translateZ(20px);
+    }
+    span:nth-child(2) {
+      background-color: red;
+      transform: rotateX(90deg)  translateZ(20px);
+    }
+  </style>
+</head>
+<body>
+<ul>
+  <li>
+    <span>黑马程序员</span>
+    <span>WEB前端</span>
+  </li>
+  <li>
+    <span>黑马程序员</span>
+    <span>WEB前端</span>
+  </li>
+  <li>
+    <span>黑马程序员</span>
+    <span>WEB前端</span>
+  </li>
+  <li>
+    <span>黑马程序员</span>
+    <span>WEB前端</span>
+  </li>
+  <li>
+    <span>黑马程序员</span>
+    <span>WEB前端</span>
+  </li>
+  <li>
+    <span>黑马程序员</span>
+    <span>WEB前端</span>
+  </li>
+</ul>
+</body>
+</html>

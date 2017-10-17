@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    body {
+      perspective: 1000px;
+    }
+    img {
+      display: block;
+      margin: 100px auto;
+      transition: all 1s;
+    }
+    img:hover {
+      /*transform: rotateY(90deg) translateX(100px);*/
+      transform: rotateY(90deg) translateZ(400px);
+      /*transform: translateX(100px);*/   /*这样写会将前面的属性值给覆盖掉，应该合在一块写*/
+    }
+  </style>
+</head>
+<body>
+<img src="images/xiaoming.png" alt="">
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>背景尺寸的两个属性</title>
+  <style>
+    div {
+      width: 700px;
+      height: 600px;
+      background: url(images/dzq.jpg) no-repeat;
+      border: 1px solid blue;
+      /*background-size: 700px 600px;*/
+      /*background-size: cover;  !*铺满整个盒子*!*/
+      background-size: contain;  /*只要有一边触及边线就不再变化了*/
+    }
+  </style>
+</head>
+<body>
+<div></div>
+</body>
+</html>

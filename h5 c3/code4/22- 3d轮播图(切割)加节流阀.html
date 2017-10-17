@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>3D轮播图</title>
+  <style>
+    *{
+        margin:0;
+        padding:0;
+    }
+    .box {
+      width: 560px;
+      height: 380px;
+      border: 1px solid #000;
+      margin: 200px auto;
+      position: relative;
+    }
+    ul {
+      float: left;
+      list-style: none;
+      width: 20%;
+      height: 380px;
+      position: relative;
+      transform-style: preserve-3d;
+      /*transform: rotateX(45deg) rotateY(45deg);*/
+    }
+    ul li {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top:0;
+      left: 0;
+    }
+   ul li:first-child {
+      background: url(images/01.jpg) no-repeat;
+     transform: translateZ(190px);
+    }
+    ul li:nth-child(2) {
+      background: url(images/02.jpg) no-repeat;
+      transform: rotateX(90deg) translateZ(190px);
+    }
+    ul li:nth-child(3) {
+      background: url(images/03.jpg) no-repeat;
+      transform: rotateX(180deg) translateZ(190px);
+    }
+    ul li:nth-child(4) {
+      background: url(images/04.jpg) no-repeat;
+      transform: rotateX(270deg) translateZ(190px);
+    }
+    
+    .arr-left,
+    .arr-right {
+      width: 60px;
+      height: 60px;
+      background-color: orangered;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: -60px;
+      line-height: 60px;
+      text-align: center;
+      text-decoration: none;
+      color: #fff;
+    }
+    .arr-right {
+      left: auto;
+      right: -60px;
+    }
+    
+    ul:nth-child(2) li {
+       background-position: -112px 0;
+    }
+    ul:nth-child(3) li {
+      background-position: -224px 0;
+    }
+    ul:nth-child(4) li {
+      background-position: -336px 0;
+    }
+    ul:nth-child(5) li {
+      background-position: -448px 0;
+    }
+  </style>
+  <script>
+    window.onload = function(){
+      //1.获得要操作的对象
+        var  box = document.querySelector(".box");
+//        var  ul = document.querySelector(".box ul");
+        var  uls = document.querySelectorAll(".box ul");
+        var arrLeft = document.querySelector(".arr-left");
+        var arrRight = document.querySelector(".arr-right");
+        var index = 0;
+        var flag = true;
+      //2.给事件源注册事件
+      
+      arrRight.addEventListener("click",function (){
+          if(flag){
+            flag = false;
+            index--;
+            for(var i=0;i<uls.length;i++){
+              uls[i].style.transition = 'all 1s '+0.1*i+'s';
+              uls[i].style.transform ='rotateX('+index*90+'deg)';
+            }
+          }
+          
+      },false);
+      arrLeft.addEventListener("click",function (){
+        if(flag){
+          flag = false;
+          index++;
+          for(var i=0;i<uls.length;i++){
+            uls[i].style.transition = 'all 1s '+0.1*i+'s';
+            uls[i].style.transform ='rotateX('+index*90+'deg)';
+          }
+        }
+      },false);
+      //3. 加节流阀
+      uls[uls.length-1].addEventListener('transitionend',function (){
+             flag = true;
+      },false);
+    }
+  </script>
+</head>
+<body>
+<div class="box">
+  <ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+  <ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+  <ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+  <ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+  <ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+  <div class="arr">
+    <a href="javascript:;" class="arr-left">上一页</a>
+    <a href="javascript:;" class="arr-right">下一页</a>
+  </div>
+</div>
+</body>
+</html>

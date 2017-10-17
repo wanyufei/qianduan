@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    div {
+      width: 300px;
+      height: 300px;
+      border: 1px solid #000;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+    div img {
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+<input type="file">
+<div></div>
+</body>
+</html>
+<script>
+    // 将想要上传的图片，显示在DIV中
+    var input = document.querySelector("input");
+    var div = document.querySelector("div");
+    input.addEventListener('change',function (){
+          // 获取要上传的文件，显示在DIV中
+      // 1. 先获取要上传的文件
+      var file = this.files[0];
+      // 2.先创建一个读取对象
+        var fr = new FileReader();
+        //3. 读取上传的文件
+        fr.readAsDataURL(file);
+        //4. 文件读取完成后，再打印输出内容
+      fr.onload = function (){
+//        console.log(fr.result);
+//        div.innerHTML = '<img src="images/3.jpg"/>';
+        div.innerHTML = '<img src="'+fr.result+'"/>';
+      }
+      
+    })
+</script>

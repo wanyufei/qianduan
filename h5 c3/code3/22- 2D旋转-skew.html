@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>skew</title>
+  <style>
+    div {
+      width: 310px;
+      height: 480px;
+      margin: 100px auto;
+    }
+    img {
+      transition: all 1s;
+    }
+    div:hover img {
+      /*里面的参数可以有两个，第一个表示 水平，第二个表示垂直，一般只设置一个，如果第二个省略的话，默认是0*/
+      /*transform: skew(30deg);*/
+      /*transform: skew(0,30deg);*/
+      /*transform: skewX(45deg);*/
+      /*transform: skewY(45deg);*/
+      transform: skew(45deg,45deg);
+    }
+  </style>
+</head>
+<body>
+<div>
+  <img src="images/pk1.png" alt="">
+</div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>新增API</title>
+</head>
+<body>
+<div id="box" class="demo">
+  <span>这是box中的span标签</span>
+</div>
+<div id="box2" class="demo">
+  <span>这是box2中的span标签</span>
+</div>
+<ul>
+  <li>这是第1个li标签</li>
+  <li>这是第2个li标签</li>
+  <li>这是第3个li标签</li>
+  <li>这是第4个li标签</li>
+  <li>这是第5个li标签</li>
+  <li>这是第6个li标签</li>
+</ul>
+<div class="demo">
+  <p>
+    <span>这是demo下面的p标签下面的一个span标签</span>
+  </p>
+</div>
+</body>
+</html>
+<script>
+//  var box = document.getElementById("box");
+//  var demo = document.getElementsByClassName("demo")[0];
+   // document.querySelector() ;// 是选择器  id   类   标签   后代   属性 类似于jQuery的$
+  
+////  var demo = document.querySelector("#box");
+//  var demo = document.querySelector(".demo");
+
+//var demo = document.querySelector("li");  // 只会获取一个，如果传进来的选择器，有多个对象的话，默认只选择第一个符合要求的
+//  console.log(demo);
+//  var lis = document.querySelectorAll("li"); // 也是将获取到的多个对象存在于伪数组当中
+//  console.log(lis);
+//  console.log(lis.length);
+  
+//  var span = document.querySelector(".demo p span");
+//  console.log(span);
+  var span = document.querySelectorAll(".demo p span");  // 获取的是伪数组的形式
+  console.log(span);
+  console.log(span[0].innerHTML);
+</script>

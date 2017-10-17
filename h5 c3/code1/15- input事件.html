@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>input事件</title>
+  <style>
+    form {
+      width: 100%;
+      max-width: 640px;
+      min-width: 320px;
+      margin: 0 auto;
+    }
+    input {
+      width: 100%;
+      height: 24px;
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+<form action="" autocomplete="off">
+  <fieldset>
+    <legend>input表单</legend>
+    <label >
+      用户名：<input type="text" name="userName" id="userName">
+    </label>
+    <label >
+      密码：<input type="text" name="userPwd" id="userPwd">
+    </label>
+  </fieldset>
+</form>
+</body>
+</html>
+<script>
+  //1.获得要操作的对象
+  var  userName = document.getElementById("userName");
+  var userPwd = document.getElementById("userPwd");
+  
+  //2.给事件源注册事件
+  // input是表单的事件  只要表单内容改变就会触发   keydown   keyup 键盘的事件
+  // input和keyup的效果类似
+  userName.oninput = function (){
+        userPwd.value = this.value.length;
+  }
+//  document.getElementById("");
+//  document.getElementsByTagName("");
+  
+  // document.querySelector("#userPwd")
+  // document.querySelectorAll()
+</script>

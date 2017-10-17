@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>html5布局</title>
+  <style>
+    header,
+    nav,
+    section,
+    footer {
+      width: 1000px;
+      border: 1px solid #000;
+      margin: 5px auto;
+    }
+    header {
+      height: 80px;
+      background-color: pink;
+    }
+    nav {
+      height: 80px;
+      background-color: purple;
+    }
+    
+    section {
+      height: 600px;
+    }
+    
+    aside {
+      height: 600px;
+      width: 400px;
+      background-color: skyblue;
+      float: left;
+    }
+    article {
+      height: 600px;
+      width: 600px;
+      background-color: saddlebrown;
+      float: left;
+    }
+    footer {
+      height: 80px;
+      background-color: lightgrey;
+    }
+  </style>
+  <!--[if lte ie 8]>
+  <script src="js/html5shiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header>头部</header>
+<nav>导航</nav>
+<section>
+  <aside>侧边栏</aside>
+  <article>文章内容</article>
+</section>
+<footer>底部</footer>
+</body>
+</html>

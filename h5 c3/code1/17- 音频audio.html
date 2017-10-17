@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>audio</title>
+</head>
+<body>
+<input type="button" value="暂停">
+<input type="button" value="播放">
+<!--<audio src="audio/yinyue.mp3" ></audio>-->
+<audio autoplay>
+  <source src="audio/yinyue.mp3">
+  <source src="audio/yinyue.ogg">
+</audio>
+</body>
+</html>
+<script>
+  //1.获得要操作的对象
+  var  pause = document.querySelector("input");
+  var play = document.querySelectorAll("input")[1];
+  var audio = document.querySelector("audio");
+  // 2.给事件源注册事件
+  pause.onclick = function (){
+     audio.pause(); // 暂停的方法
+  }
+  play.onclick = function (){
+         audio.play();
+  }
+  
+  // audio.paused
+  // play
+</script>

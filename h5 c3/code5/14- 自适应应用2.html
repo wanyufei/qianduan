@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>自适应布局应用2</title>
+  <style>
+    *{
+        margin:0;
+        padding:0;
+    }
+    ul {
+      height: 80px;
+      border: 1px solid #000;
+      list-style: none;
+      display: flex;
+    }
+    li{
+      height: 80px;
+      background-color: orangered;
+      border: 1px solid #000;
+    }
+    
+    li:nth-child(1),
+    li:nth-child(3) {
+      width: 100px;
+    }
+    li:nth-child(2) {
+      flex:1;
+    }
+  </style>
+</head>
+<body>
+<ul>
+  <li>1</li>
+  <li>2</li>
+  <li>3</li>
+</ul>
+</body>
+</html>

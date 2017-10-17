@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    div {
+      width: 400px;
+      height: 40px;
+      margin: 30px auto;
+      border: 1px solid #000;
+      opacity: 0;
+    }
+    .online {
+      opacity: 0;
+    }
+    .offline {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+<div>你已经进入了没有网络的状态</div>
+</body>
+</html>
+<script>
+  var box = document.querySelector("div");
+    if(navigator.onLine) {
+      box.className = 'online';
+    }else {
+      box.className = 'offline';
+    }
+    
+    
+    // 需要注册事件
+  window.addEventListener('online',function (){
+         box.className = 'online';
+  },false);
+  window.addEventListener("offline",function (){
+         box.className = 'offline';
+  },false);
+</script>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+      div {
+        font-family: "";
+      }
+  </style>
+</head>
+<body>
+<input type="button" value="土豪金">
+<input type="button" value="深海蓝">
+<input type="button" value="风骚粉">
+</body>
+</html>
+<script>
+  var btns = document.querySelectorAll("input");
+  
+//  一开始的时候，就需要设置一下颜色
+  document.body.style.backgroundColor = localStorage.getItem('bgColor1');
+  btns[0].onclick = function (){
+         document.body.style.backgroundColor = "gold";
+         localStorage.setItem('bgColor1','gold');
+  }
+  btns[1].onclick = function (){
+    document.body.style.backgroundColor = "deepskyblue";
+    localStorage.setItem('bgColor1','deepskyblue');
+  }
+  btns[2].onclick = function (){
+         document.body.style.backgroundColor='hotpink';
+    localStorage.setItem('bgColor1','hotpink');
+  }
+</script>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>背景原点</title>
+  <style>
+    div {
+      width: 400px;
+      height: 400px;
+      border: 50px solid rgba(0,0,0,.2);
+      padding: 30px;
+      background: url(images/dzq.jpg) no-repeat;
+      /*background-origin: border-box;*/
+      /*background-origin: padding-box;  !*默认的显示状态 边框以内，都属于盒子的内部* !*/
+      background-origin: content-box;  /*默认的显示状态*/
+    }
+  </style>
+</head>
+<body>
+<div></div>
+</body>
+</html>

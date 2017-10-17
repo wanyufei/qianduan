@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>泡沫效果</title>
+  <style>
+    div:first-child {
+      width: 360px;
+      height: 80px;
+      border-radius: 5px;
+      background: url(images/paopao.png) no-repeat left top,
+          url(images/paopao.png) no-repeat right bottom,
+           linear-gradient(#310,#369);
+      
+      transition: all 0.8s;
+    }
+    div:first-child:hover {
+      background-position: left bottom,right top ;
+    }
+    div:nth-child(2) {
+      width: 300px;
+      height: 120px;
+      background: coral url(images/paopao.png) no-repeat 0px 0px;
+    }
+  </style>
+</head>
+<body>
+<div></div>
+<div></div>
+</body>
+</html>
