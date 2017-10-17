@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a href="second.html">跳转到second</a>
+</body>
+<script src="../js/lib/jquery-2.1.4.js"></script>
+<script src="../js/lib/jquery.cookie.js"></script>
+<script>
+    //1、设置会话cookie(关闭浏览器之后，数据就丢失了)
+    $.cookie("userName","c5");
+    $.cookie("userId","888");
+    //2、获取cookie值
+    console.log($.cookie("userName"));//"c5"
+
+    //3、设置cookie有效期
+    $.cookie("userAge","18",{
+        expires:0.1   //7天
+    });
+
+    //4、删除cookie
+    $.removeCookie("userAge");
+</script>
+</html>

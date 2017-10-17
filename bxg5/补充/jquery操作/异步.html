@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    var num=10;
+    setTimeout(function(){
+        console.log(num);//11   //先执行了11行，然后执行了15行，最后执行了13行
+    },0);
+    num++;
+</script>
+</html>

@@ -1,0 +1,28 @@
+<div class="panel panel-default">
+    <div class="panel-body">
+        <ol class="breadcrumb">
+            <li><a href="#">课程管理</a></li>
+            <li class="active">课程图片</li>
+        </ol>
+        <div class="media">
+            <div class="media-left">
+                <a href="javascript:void(0)">
+
+                    {{if(!cs_cover)}}
+                    <img class="media-object" src="imgs/course.png" alt="" width="240" height="120">
+                    {{else}}
+                    <img class="media-object" src="{{cs_cover}}" alt="" width="240" height="120">
+                    {{/if}}
+
+                </a>
+            </div>
+            <div class="media-body">
+                <h4>课程名称：{{cs_name}}</h4>
+                <h4 class="media-heading">讲师名称：{{tc_name}}</h4>
+                <input type="file" id="picUpload">
+            </div>
+        </div>
+
+
+    </div>
+</div>

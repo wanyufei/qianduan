@@ -1,0 +1,303 @@
+<html>
+  <head>
+	  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>i5ting_ztree_toc:README</title>
+		<link href="toc/style/github-bf51422f4bb36427d391e4b75a1daa083c2d840e.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/style/github2-d731afd4f624c99a4b19ad69f3083cd6d02b81d5.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/zTreeStyle/zTreeStyle.css" media="all" rel="stylesheet" type="text/css"/>
+	  <style>
+		pre {
+		    counter-reset: line-numbering;
+		    border: solid 1px #d9d9d9;
+		    border-radius: 0;
+		    background: #fff;
+		    padding: 0;
+		    line-height: 23px;
+		    margin-bottom: 30px;
+		    white-space: pre;
+		    overflow-x: auto;
+		    word-break: inherit;
+		    word-wrap: inherit;
+		}
+
+		pre a::before {
+		  content: counter(line-numbering);
+		  counter-increment: line-numbering;
+		  padding-right: 1em; /* space after numbers */
+		  width: 25px;
+		  text-align: right;
+		  opacity: 0.7;
+		  display: inline-block;
+		  color: #aaa;
+		  background: #eee;
+		  margin-right: 16px;
+		  padding: 2px 10px;
+		  font-size: 13px;
+		  -webkit-touch-callout: none;
+		  -webkit-user-select: none;
+		  -khtml-user-select: none;
+		  -moz-user-select: none;
+		  -ms-user-select: none;
+		  user-select: none;
+		}
+
+		pre a:first-of-type::before {
+		  padding-top: 10px;
+		}
+
+		pre a:last-of-type::before {
+		  padding-bottom: 10px;
+		}
+
+		pre a:only-of-type::before {
+		  padding: 10px;
+		}
+
+		.highlight { background-color: #ffffcc } /* RIGHT */
+		</style>
+  </head>
+  <body>
+	  <div>
+				<div style='width:25%;'>
+						<ul id="tree" class="ztree" style='width:100%'>
+
+						</ul>
+				</div>
+        <div id='readme' style='width:70%;margin-left:20%;'>
+          	<article class='markdown-body'>
+            	<p>﻿# bxg 博学谷项目</p>
+<h2 id="-">接口文档地址</h2>
+<p><a href="http://doc.botue.com/">http://doc.botue.com/</a></p>
+<h2 id="-">配置虚拟主机</h2>
+<ul>
+<li>1、打开apache安装目录，扎到conf/httpd.conf文件编辑<ul>
+<li>a、找到DocuemtnRoot记住它</li>
+<li>b、找到：Include conf/extra/httpd-vhosts.conf如果前面有#，把#去掉</li>
+<li>c、保存文件</li>
+</ul>
+</li>
+<li><p>2、找到conf/extra/httpd-vhosts.conf打开编辑</p>
+<ul>
+<li><p>a、在文件的最底部添加一段代码：</p>
+<VirtualHost *:80>
+  ServerAdmin webmaster@dummy-host.example.com
+  DocumentRoot &quot;C:/Users/Wilbert/Desktop/www/bxg5&quot;
+  ServerName bxg5.com
+  ServerAlias www.bxg5.com
+
+  #ProxyRequests Off
+  #ProxyPass /api <a href="http://api.botue.com/v7">http://api.botue.com/v7</a>
+
+  ErrorLog &quot;logs/dummy-host.example.com-error.log&quot;
+  CustomLog &quot;logs/dummy-host.example.com-access.log&quot; common
+</VirtualHost></li>
+<li>b、修改上面的DocumentRoot指向某个目录，该目录就是存放网站的（ps：这个目录有一个前提，必须是httpd.conf文件中的DocumentRoot的子目录，同时不能含有中文）</li>
+<li>c、修改ServerName/ServerAlias保存某个域名，修改ServerName没有www前缀的,该域名就是用来访问该网站的，同时不能与当前文件中设置过的其他域名重复</li>
+<li>d、保存文件</li>
+</ul>
+</li>
+<li>3、重启apache服务器，重启成功就ok</li>
+<li>4、找到本地的hosts文件：hosts文件位于：c://windows/system32/drivers/etc/hosts，把该文件复制到桌面进行编辑,编辑完进行替换<ul>
+<li>编辑一段内容：127.0.0.1  bxg5.com</li>
+</ul>
+</li>
+<li>5、用域名访问该网站</li>
+</ul>
+<h2 id="-">反向代理的设置</h2>
+<ul>
+<li><p>1、找到httpd.conf文件，把以下代码前面的#去掉
+LoadModule proxy_module modules/mod_proxy.so
+LoadModule proxy_http_module modules/mod_proxy_http.so</p>
+</li>
+<li><p>2、找到配置的虚拟主机的地方，把以下代码前面的#去掉
+ProxyRequests Off
+ProxyPass /api <a href="http://api.botue.com/v7">http://api.botue.com/v7</a></p>
+</li>
+<li><p>3、重启服务器，用logout接口测试</p>
+</li>
+</ul>
+<h2 id="-login-html-index-html-">为了实现login.html里面的数据可以再index.html里面进行访问：</h2>
+<ul>
+<li><p>a、h5本地存储：localStorage/sessionStorage</p>
+<pre><code>          //ps：设置的值必须是一个字符串类型，如果不是字符串类型，会将该值转换为字符串来存储，如果非要保存一个对象，可以把该对象转换为JSON
+</code></pre><p>//                localStorage.setItem(&quot;tc_name&quot;,res.result);//{tc_name:&quot;ccc&quot;,tc_avatar&quot;:&quot;xxx&quot;}
+//                console.log(localStorage.getItem(&quot;tc_name&quot;));</p>
+<pre><code>          localStorage.setItem(&quot;userInfo&quot;,JSON.stringify(res.result));
+          //console.log(localStorage.getItem(&quot;userInfo&quot;));
+</code></pre></li>
+<li><p>b、cookie：浏览器端的技术，也可以实现：在不跨域的前提下，任何页面都可以访问这些数据</p>
+</li>
+<li><p>c、session：服务器端的技术</p>
+</li>
+</ul>
+<h2 id="requirejs-html-text-">requireJS加载html文件，要使用官方提供的text插件</h2>
+<ul>
+<li>1、下载插件，把插件放到项目中</li>
+<li>2、通过path配置插件的路径,最好也配置下模板文件的文件夹路径</li>
+<li>3、在需要加载html文件的模块中，通过:&quot;text!模板文件路径.html&quot;，如果能够正确的加载这个html文件，那么就可以像获取模块返回值一样，用一个参数来接受html文件的内容</li>
+</ul>
+<h2 id="-bootstrap-">使用bootstrap日期控件</h2>
+<ul>
+<li>1、下载控件源码，官网：<a href="http://www.bootcss.com/p/bootstrap-datetimepicker/index.htm">http://www.bootcss.com/p/bootstrap-datetimepicker/index.htm</a></li>
+<li>2、引入bootstrap.css</li>
+<li>3、引入datetimepicker.css</li>
+<li>4、页面中添加一个文本框：<input type="text" value="" id="datetimepicker"></li>
+<li>5、引入jquery.js</li>
+<li>6、引入bootstrap.js</li>
+<li>7、引入datetimepicker.js</li>
+<li>8、引入datetimepicker</li>
+<li>9、编写代码
+```js
+$(&quot;#datetimepicker&quot;).datetimepicker({
+  format: &#39;yyyy-mm-dd&#39;,           //格式化日期格式
+  language:&quot;zh-CN&quot;,               //选择语言，需要引入语言包
+  daysOfWeekDisabled:[1,2],        //指定周几不能用
+  autoclose:true,      //选完一个日期之后就会自动隐藏日期框
+  minView:&quot;month&quot;,
+  todayBtn:true,
+  todayHighlight:true     //当选择其他日期的时候，高亮今天的日期</li>
+</ul>
+<p>});</p>
+<pre><code class="lang-`">
+
+###课程id
++ 1、在渲染课程列表的时候，把课程id放到这一行中(编辑课时按钮的父元素中)
++ 2、给编辑课时绑定事件，事件触发的时候，就可以获取到课程id
++ 3、把课程id存放到课时管理按钮中
++ 4、在课时管理按钮的事件中，即将触发课时管理模块的加载，所以在加载课时管理模块的时候把课程id传递到课时管理模块中
++ 5、就可以在课时管理模块中获取到该课程id
+
+###课程id第二种
++ 1、在渲染课程列表的时候，把课程id放到这一行中(编辑课时按钮的父元素中)
++ 2、给编辑课时绑定事件，事件触发的时候，就可以获取到课程id
++ 3、直接触发课时管理模块的加载，在加载的时候把课程id传递过去
+
+
+## 常见的错误情况：
++ 1、可以跳转到index.html但是不能获取到用户名和头像信息
+    - 没有保存成功cookie值--&gt;没有正确的提交表单
++ 2、给修改用户状态按钮事件绑定失败
+    - a、页面中的是一个元素，绑定事件的是另一个元素，比如：
+        ```js
+        $(str).on(&quot;click&quot;,&quot;.btn-status&quot;,function(){});
+        $(&quot;.menu-content-container&quot;).append(str);
+</code></pre>
+<pre><code>- b、同上，又如下一种错误形式：
+    ```js
+    $(str).on(&quot;click&quot;,&quot;.btn-status&quot;,function(){});
+            $(&quot;.menu-content-container&quot;).append($(str));
+    ```
+</code></pre><ul>
+<li><p>3、模板文件错误</p>
+<ul>
+<li>模板语法有错，可以根据出错行和列信息找到错误的根源</li>
+</ul>
+</li>
+<li><p>4、模板无法编译，导致js代码错误</p>
+<ul>
+<li>可能因为编译的时候没有传入数据，或者数据值为null/undefined</li>
+</ul>
+</li>
+<li><p>5、模板文件只能有一个根节点(多一个注释节点or空节点也不行)，不然将会导致出现多个遮罩层的情况</p>
+</li>
+<li><p>6、日期控件应该先添加到页面中，然后再调用datetimepicker</p>
+</li>
+<li><p>7、不要使用data-dismiss属性关闭模态框，否则将会导致事件绑定失败</p>
+</li>
+</ul>
+<h2 id="-a-b-b-a-">如果a模块依赖b模块，同时b模块也需要依赖a模块，不能通过循环依赖来实现</h2>
+<ul>
+<li>只能通过a模块依赖b模块，b模块通过同步加载的方式实现加载a模块<ul>
+<li>a.js<ul>
+<li>define([&quot;b&quot;])</li>
+</ul>
+</li>
+<li>b.js<ul>
+<li>var a=require(&quot;a&quot;);   //a指向a模块的返回值</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="-">省市县三级联动</h2>
+<ul>
+<li>1、根据数据加载省级下拉框</li>
+<li>2、给省级下拉框绑定change事件，从而获取到省级数据，并加载该省对应的市级数据</li>
+</ul>
+<h2 id="-">常用的一些第三方库</h2>
+<ul>
+<li>大型的组件化库，提供了非常多的常用的组件(表格、下拉框、模态框等)<ul>
+<li>jQueryUI</li>
+<li>EasyUI</li>
+<li>ligerUI</li>
+<li>DWZ</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>jquery插件</p>
+<ul>
+<li>jquery.bootstrap.js--&gt;bootstrap插件</li>
+<li>jquery.cookie.js--&gt;操作cookie</li>
+<li>jquery.validate.js--&gt;前端验证</li>
+</ul>
+</li>
+<li><p>bootstrap插件</p>
+<ul>
+<li>bootstrap.datetimepicker</li>
+</ul>
+</li>
+<li><p>图表</p>
+<ul>
+<li>echarts       --&gt;百度</li>
+<li>highcharts</li>
+</ul>
+</li>
+<li><p>上传</p>
+<ul>
+<li>uploadify</li>
+<li>jQuery File Upload --&gt;jquery插件</li>
+<li>Web Uploader --&gt;百度</li>
+</ul>
+</li>
+<li><p>富文本编辑器</p>
+<ul>
+<li>UEditor   --&gt;百度</li>
+<li>ckEditor</li>
+<li>kindEditor</li>
+</ul>
+</li>
+</ul>
+<h2 id="-">练习：</h2>
+<ul>
+<li><p>已知</p>
+<pre><code class="lang-js">var str=&quot;userName=ccc&amp;userId=666&amp;userAge=18&quot;;
+</code></pre>
+<p>封装一个函数，可以获取指定的cookie值</p>
+</li>
+<li><p>用文字的方式写出讲师列表的具体操作步骤</p>
+</li>
+<li>用文字的方式写出注销启用的具体操作步骤</li>
+</ul>
+
+          	</article>
+        </div>
+		</div>
+  </body>
+</html>
+<script type="text/javascript" src="toc/js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="toc/js/jquery.ztree.all-3.5.min.js"></script>
+<script type="text/javascript" src="toc/js/ztree_toc.js"></script>
+<script type="text/javascript" src="toc_conf.js"></script>
+
+<SCRIPT type="text/javascript" >
+<!--
+$(document).ready(function(){
+    var css_conf = eval(markdown_panel_style);
+    $('#readme').css(css_conf)
+    
+    var conf = eval(jquery_ztree_toc_opts);
+		$('#tree').ztree_toc(conf);
+});
+//-->
+</SCRIPT>

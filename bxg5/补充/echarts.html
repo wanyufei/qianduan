@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
+<div class="main" style="width: 600px;height:400px;border:1px solid red;"></div>
+</body>
+<script src="../js/lib/echarts.min.js"></script>
+<script>
+    var main=document.getElementsByClassName('main')[0];
+
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(main);
+
+    // 指定图表的配置项和数据
+    //app.title = '环形图';
+
+    var option = {
+        //悬浮框
+        tooltip: {
+            trigger: 'item',
+            //指定了悬浮框的内容
+            formatter: "{a} <br/>{b}: {c} ({d}%)"
+        },
+        //图例
+        legend: {
+            //show:false,       //图例是否可见
+            //指定对齐方式
+            orient: 'horizontal',
+//            x: 'left',
+            right:50,        //右对齐
+            data:['直接访问','邮件营销','联盟广告','视频广告','搜索引擎'],
+            textStyle:{
+//                fontFamily:"宋体",
+//                fontSize:30
+            }
+        },
+        series: [
+            {
+                name:'访问来源',
+                type:'pie',         //type指定了图形的类型-->pie：饼图
+                radius: ['50%', '70%'],     //分别制定了内外圆的半径
+                avoidLabelOverlap: false,
+                label: {
+                    normal: {
+                        show: false,
+                        position: 'center'
+                    },
+                    emphasis: {
+                        show: true,
+                        textStyle: {
+                            fontSize: '30',
+                            fontWeight: 'bold'
+                        }
+                    }
+                },
+                labelLine: {
+                    normal: {
+                        show: false
+                    }
+                },
+                //数据
+                data:[
+                    {value:35, name:'直接访问'},
+                    {value:310, name:'邮件营销'},
+                    {value:234, name:'联盟广告'},
+                    {value:135, name:'视频广告'},
+                    {value:1548, name:'搜索引擎'}
+                ]
+            }
+        ]
+    };
+
+
+
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+</script>
+</html>

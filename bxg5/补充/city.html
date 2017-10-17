@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.css">
+</head>
+<body>
+
+<form class="form form-horizontal">
+    <div class="form-group">
+        <h4 class="text-center">省市县联动</h4>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2">居住地</label>
+        <div class="col-sm-3">
+            <select name="" class="form-control province"></select>
+        </div>
+        <div class="col-sm-3">
+            <select name="" class="form-control city"></select>
+        </div>
+        <div class="col-sm-3">
+            <select name="" class="form-control area"></select>
+        </div>
+    </div>
+</form>
+</body>
+<script src="../js/lib/jquery-2.1.4.js"></script>
+<script>
+    $.getJSON("/js/city.json", function (res) {
+        console.log(res);
+
+        for (var name in res) {
+            $(".province").append("<option>" + name + "</option>");
+        }
+
+        $("body").on("change", ".province", function () {
+            var provinceName = $(this).val();
+            $(".city").empty();
+            for (var cityName in res[provinceName].data) {
+                $(".city").append("<option>" + cityName + "</option>");
+            }
+
+            $(".city").trigger("change");
+        }).on("change", ".city", function () {
+            var provinceName=$(".province").val();
+            var cityName = $(this).val();
+            $(".area").empty();
+            for (var areaName in res[provinceName].data[cityName].data) {
+                $(".area").append("<option>" + areaName + "</option>");
+            }
+        });
+
+        $(".province").trigger("change");
+    });
+
+
+</script>
+</html>

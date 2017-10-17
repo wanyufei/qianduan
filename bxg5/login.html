@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+<div class="login-container">
+    <h3 class="text-center">博学谷后台管理系统</h3>
+    <form class="form-horizontal">
+        <div class="form-group">
+            <label class="col-sm-2 control-label">用户名</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" placeholder="" name="tc_name" value="前端学院">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">密码</label>
+            <div class="col-sm-10">
+                <input type="password" class="form-control" placeholder="" name="tc_pass" value="123456">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-success btn-block btn-lg">登录</button>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+<script src="js/lib/jquery-2.1.4.js"></script>
+<script src="js/lib/jquery.cookie.js"></script>
+<script>
+    $("form").on("submit",function(){
+        //1、获取输入的表单信息
+        var formData=$(this).serialize();
+
+        //2、提交到服务器
+        $.ajax({
+            type:"post",
+            url:"/api/login",
+            data:formData,
+            success:function(res){  //响应的：response
+
+                //为了实现login.html里面的数据可以再index.html里面进行访问：
+                //a、h5本地存储：localStorage/sessionStorage
+
+                //ps：设置的值必须是一个字符串类型，如果不是字符串类型，会将该值转换为字符串来存储，如果非要保存一个对象，可以把该对象转换为JSON
+//                localStorage.setItem("tc_name",res.result);//{tc_name:"ccc",tc_avatar":"xxx"}
+//                console.log(localStorage.getItem("tc_name"));
+
+//                localStorage.setItem("userInfo",JSON.stringify(res.result));
+//                console.log(localStorage.getItem("userInfo"));
+
+                //b、cookie：浏览器端的技术，也可以实现：在不跨域的前提下，任何页面都可以访问这些数据
+                $.cookie("userInfo",JSON.stringify(res.result));
+
+                //c、session：服务器端的技术
+
+
+
+                location.href="/";//location.href="index.html"
+            }
+        })
+
+        //出发点：减少服务器的压力，将服务器验证变成前端验证
+        //      -->前端验证需要获取数据，需要在用户提交表单的时候，才能真正的获取数据，而用户用户提交表单就会触发form标签的submit事件，而submit事件的就会默认跳转页面(刷新页面)，而一旦跳转页面数据就丢失了，所以需要阻止该事件的默认行为
+        //阻止事件的默认行为-->同步提交表单
+        return false;
+    })
+</script>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../assets/uploadify/uploadify.css">
+</head>
+<body>
+<input type="file" id="upload">
+<input type="button" id="btn" value="上传">
+</body>
+<script src="../../js/lib/jquery-2.1.4.js"></script>
+<script src="../../assets/uploadify/jquery.uploadify.js"></script>
+<script>
+    $(function() {
+        $("#upload").uploadify({
+            auto:false,     //是否自动提交表单
+            fileObjName:"cs_cover_original",    //提交到服务器的name值
+            formData:{cs_id:6},                 //需要提交到服务器的额外的数据
+            height        : 198,
+            swf           : '../../assets/uploadify/uploadify.swf', //必填、放一个swf文件
+            uploader      : '/api/uploader/cover',      //请求的地址
+            width         : 195,
+            buttonImage:"../../imgs/pic.jpg",        //设置按钮的图片
+            //itemTemplate:"<span></span>",         //指定上传的内容模板
+            fileTypeExts:"*.jpg; *.png;",        //限制了上传文件的类型
+//            multi:false
+            queueSizeLimit:1        //限制了等待上传的文件个数
+        });
+    });
+
+    $("#btn").on("click",function(){
+        $("#upload").uploadify("upload","*");   //上传所有文件
+    })
+</script>
+</html>

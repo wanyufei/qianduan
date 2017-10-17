@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a href="second.html">跳转到second</a>
+</body>
+<script>
+    //第一种：写入2个cookie
+    //document.cookie="userName=ccc";
+    //document.cookie="userId=666";
+    //以上的cookie都是基于会话机制的(关闭浏览器窗口，数据就丢失了)
+
+    //第二种方式：设置cookie有效期
+    //document.cookie="userAge=18;expires="+new Date("2017-06-29 08:00:00");
+
+    //读取cookie：
+    console.log(document.cookie);
+    //将会是所有的cookie的集合："userName=ccc&userId=666&userAge=18";
+
+
+</script>
+</html>

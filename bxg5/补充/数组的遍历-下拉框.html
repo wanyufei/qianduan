@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script src="../js/lib/jquery-2.1.4.js"></script>
+<script>
+    var data=[
+        {value:1,text:"a"},
+
+        {value:2,text:"b"},
+
+        {value:3,text:"c"},
+
+        {value:4,text:"d"},
+
+        {value:5,text:"e"}
+    ];
+
+    var value=5;
+
+    //渲染要给下拉框，同时选中value=5的数据
+
+    var str="<select>";
+    data.forEach(function(v,i){
+        //v
+        if(v.value==value){
+            str+="<option value='"+v.value+"' selected='selected'>"+v.text+"</option>";
+        }else{
+            str+="<option value='"+v.value+"'>"+v.text+"</option>";
+        }
+
+
+
+    });
+
+    str+="</select>";
+
+    $(str).appendTo("body");
+</script>
+</html>

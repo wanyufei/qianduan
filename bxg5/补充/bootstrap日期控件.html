@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bootstrap日期控件</title>
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/datetimepicker/css/bootstrap-datetimepicker.css">
+</head>
+<body>
+    <input type="text" value="" id="datetimepicker">
+</body>
+<script src="../js/lib/jquery-2.1.4.js"></script>
+<script src="../assets/bootstrap/js/bootstrap.js"></script>
+<script src="../assets/datetimepicker/js/bootstrap-datetimepicker.js"></script>
+<script src="../assets/datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+<script>
+    $('#datetimepicker').datetimepicker({
+        format: 'yyyy-mm-dd',           //格式化日期格式
+        language:"zh-CN",               //选择语言，需要引入语言包
+        daysOfWeekDisabled:[1,2],        //指定周几不能用
+        autoclose:true,      //选完一个日期之后就会自动隐藏日期框
+        minView:"month",
+        todayBtn:true,
+        viewSelect:"hour",
+        todayHighlight:true     //当选择其他日期的时候，高亮今天的日期
+    });
+</script>
+</html>

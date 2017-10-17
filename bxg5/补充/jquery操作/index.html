@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script src="../js/lib/jquery-2.1.4.js"></script>
+<script>
+    var str = "<div><input type='button' value='按钮'></div>";
+
+
+    //每创建2个对象都不可能指向相同的内存地址
+//    new Object();
+//    new Object();
+
+    var img=document.createElement("img");
+    var img2=document.createElement("img");
+    console.log(img==img2);     //false
+
+
+    var img3=new Image();
+    var img4=new Image();
+    console.log(img3==img4);    //false
+
+    //错误的写法：
+    //    var $str2=$(str);
+    //
+    //    var $str=$(str);    //把一个字符串转换为一个dom元素（a1）
+    //    $str.on("click","input",function(){
+    //        alert("点击了按钮");
+    //    });
+    //
+    //    console.log($str2[0]===$str[0]);
+    //
+    //    $("body").html(str);//这一段代码内部会把str转换为一个dom元素，把该dom元素放到页面中
+
+
+    //如何解决：
+//    $(str)
+//            .on("click", "input", function () {
+//                alert("点击了按钮");
+//            })
+//            .appendTo("body");
+
+
+    var $str=$(str);
+    $str.on("click","input",function(){
+        alert("点击了按钮");
+    });
+
+    $("body").append($str);
+
+
+</script>
+</html>
